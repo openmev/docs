@@ -1,7 +1,9 @@
 {
   "index": "Overview",
-  "sushi": "SushiSwap",
+  "sushi": "SushiSwap Integration",
+  "rebate": "Trading for Free on SushiSwap",
+  "tx-rebate": "Calculations and Rebates",
+  "account-abstraction": "Account Abstraction via Mempool",
   "api-reference": "OpenMEV API",
-  "gas-api": "Gas Pricing API",
-  "formulas": "Calculations and Rebates"
+  "gas-api": "Gas Pricing API"
 }
