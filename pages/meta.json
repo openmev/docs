@@ -2,5 +2,6 @@
   "index": "Overview",
   "sushi": "SushiSwap",
   "api-reference": "OpenMEV API",
-  "gas-api": "Gas Pricing API"
+  "gas-api": "Gas Pricing API",
+  "formulas": "Calculations and Rebates"
 }

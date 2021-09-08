@@ -1,81 +1,49 @@
-# Get Started
+---
+title: SushiSwap Integration Overview
+---
 
-## Quick Start with Vercel
+# SushiSwap Integration Overview
 
-You can start by create your own Nextra site and deploy to Vercel by clicking
-the link:
 
-[![](https://vercel.com/button)](https://vercel.com/new/clone?demo-description=Markdown%20powered%20docs%20site.%20Built%20with%20Next.js.&demo-image=https%3A%2F%2Fnextra.vercel.app%2Fdemo.png&demo-title=Documentation%20Starter%20Kit&demo-url=https%3A%2F%2Fnextra.vercel.app%2F&project-name=nextjs-docs&repository-name=nextjs-docs&s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra&from=templates)
 
-Vercel will create the Nextra repository and deploy the site for you with just a
-few clicks.  
-Once done, every change in the repository will be deployed automatically.
+## SushiSwap OpenMEV Internal API
 
-## Create Manually
+> API is currently for internal usage
 
-Nextra works like a Next.js plugin, and it accepts a theme config (layout) to
-render the page. To start:
+### Documentation for API Endpoints
 
-1. Install Next.js, Nextra and React: `yarn add next nextra react react-dom`
+All URIs are relative to *https://sushirelay.com*
 
-2. Install the docs theme (you can use any theme you like):
-   `yarn add nextra-theme-docs`
+| Class        | Method                                                                          | HTTP request                           | Description                                                                                                                                                                                             |
+| ------------ | ------------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _DefaultApi_ | [**apiV1OrdersGet**](Apis/DefaultApi.md#apiv1ordersget)                         | **GET** /api/v1/orders                 | Get existing orders.                                                                                                                                                                                    |
+| _DefaultApi_ | [**apiV1OrdersPost**](Apis/DefaultApi.md#apiv1orderspost)                       | **POST** /api/v1/orders                | Create a new order.                                                                                                                                                                                     |
+| _DefaultApi_ | [**apiV1OrdersUIDDelete**](Apis/DefaultApi.md#apiv1ordersuiddelete)             | **DELETE** /api/v1/orders/{UID}        | Cancels order by marking it invalid with a timestamp.                                                                                                                                                   |
+| _DefaultApi_ | [**apiV1OrdersUIDGet**](Apis/DefaultApi.md#apiv1ordersuidget)                   | **GET** /api/v1/orders/{UID}           | Get existing order from UID.                                                                                                                                                                            |
+| _DefaultApi_ | [**apiV1SolvableOrdersGet**](Apis/DefaultApi.md#apiv1solvableordersget)         | **GET** /api/v1/solvable_orders        | Get solvable orders.                                                                                                                                                                                    |
+| _DefaultApi_ | [**apiV1TokensSellTokenFeeGet**](Apis/DefaultApi.md#apiv1tokensselltokenfeeget) | **GET** /api/v1/tokens/{sellToken}/fee | The fee that is charged for placing an order. The fee is described by a minimum fee - in order to cover the gas costs for onchain settling - and a feeRatio charged to the users for using the service. |
+| _DefaultApi_ | [**apiV1TradesGet**](Apis/DefaultApi.md#apiv1tradesget)                         | **GET** /api/v1/trades                 | Get existing Trades.                                                                                                                                                                                    |
 
-3. Create the following Next.js config:
+### Documentation for Models
 
-```jsx
-// next.config.js
-const withNextra = require('nextra')({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.js',
-  // optional: add `unstable_staticImage: true` to enable Nextra's auto image import
-});
-module.exports = withNextra();
-```
+- [FeeInformation](.//Models/FeeInformation.md)
+- [Order](.//Models/Order.md)
+- [OrderCancellation](.//Models/OrderCancellation.md)
+- [OrderCancellationError](.//Models/OrderCancellationError.md)
+- [OrderCreation](.//Models/OrderCreation.md)
+- [OrderMetaData](.//Models/OrderMetaData.md)
+- [OrderPostError](.//Models/OrderPostError.md)
+- [OrderType](.//Models/OrderType.md)
+- [Trade](.//Models/Trade.md)
 
-4. Create a `theme.config.js` file for the docs theme:
+### Documentation for Authorization
 
-```jsx
-// theme.config.js
-export default {
-  github: 'https://github.com/shuding/nextra', // GitHub link in the navbar
-  docsRepositoryBase: 'https://github.com/shuding/nextra/blob/master', // base URL for the docs repository
-  titleSuffix: ' – Nextra',
-  nextLinks: true,
-  prevLinks: true,
-  search: true,
-  customSearch: null, // customizable, you can use algolia for example
-  darkMode: true,
-  footer: true,
-  footerText: `MIT ${new Date().getFullYear()} © Shu Ding.`,
-  footerEditLink: `Edit this page on GitHub`,
-  logo: (
-    <>
-      <svg>...</svg>
-      <span>Next.js Static Site Generator</span>
-    </>
-  ),
-  head: (
-    <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="Nextra: the next docs builder" />
-      <meta name="og:title" content="Nextra: the next docs builder" />
-    </>
-  ),
-};
-```
+All endpoints do not require authorization.
 
-5. Create `pages/_app.js` and include the theme stylesheet:
+source: `{{ page.path }}`
 
-```jsx
-import 'nextra-theme-docs/style.css';
 
-export default function Nextra({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
-```
 
-6. You are good to go! Run `yarn next` to start.
 
 ---
 
