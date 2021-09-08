@@ -40,23 +40,3 @@ All URIs are relative to *https://sushirelay.com*
 
 All endpoints do not require authorization.
 
-source: `{{ page.path }}`
-
-
-
-
----
-
-import Callout from 'nextra-theme-docs/callout';
-
-<span id="sidebar-and-anchor-links" />
-<Callout>
-  Any `.md` or `.mdx` file will turn into a doc page and be displayed in
-  sidebar. You can also create a `meta.json` file to customize the page order
-  and title. <br /> Check the source code: https://github.com/shuding/nextra for
-  more information.
-</Callout>
-
-<Callout>
-You can also use [`<style jsx>`](https://nextjs.org/docs/basic-features/built-in-css-support#css-in-js) to style elements inside `theme.config.js`.
-</Callout>
