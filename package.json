@@ -1,14 +1,13 @@
 {
-  "name": "nextra",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@openmev/docs",
+  "version": "0.1.0",
+  "description": "documentation webapp",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "start": "next start",
-    "build": "next build"
+    "dev": "npx next",
+    "start": "npx next start",
+    "build": "npx next build"
   },
-  "author": "Shu Ding",
   "license": "MIT",
   "dependencies": {
     "next": "^11.0.1",
@@ -26,9 +25,5 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.1",
     "prettier": "^2.3.2"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
   }
 }
