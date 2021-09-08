@@ -27,7 +27,7 @@ export default {
       <meta name="twitter:image" content="https://openmev.org/og.png" />
       <meta name="twitter:site:domain" content="openmev.org" />
       <meta name="twitter:url" content="https://openmev.org" />
-      <meta name="og:title" content="OpenMEV: Next.js static site generator" />
+      <meta name="og:title" content="OpenMEV - Credible Neutrality for MEV" />
       <meta name="og:image" content="https://openmev.org/og.png" />
       <meta name="apple-mobile-web-app-title" content="OpenMEV" />
       <link
