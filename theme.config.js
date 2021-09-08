@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default {
   github: 'https://github.com/openmev/docs',
   docsRepositoryBase: 'https://github.com/openmev/docs/blob/master',
