@@ -1,7 +1,6 @@
 {
-  "index": "Introduction",
-  "get-started": "Get Started",
-  "features": "Features",
-  "themes": "Themes",
-  "advanced": "Advanced"
+  "index": "Overview",
+  "sushi-rebate": "SushiSwap",
+  "api-reference": "OpenMEV API",
+  "gas-api": "Gas Pricing API"
 }

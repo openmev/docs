@@ -12,13 +12,20 @@
   "license": "MIT",
   "dependencies": {
     "next": "^11.0.1",
+    "next-themes": "^0.0.15",
     "nextra": "^1.1.0",
-    "nextra-theme-docs": "^1.2.2",
+    "nextra-theme-docs": "^1.2.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "@types/node": "^14",
+    "@types/react": "^17.0.20",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
+    "prettier": "^2.3.2"
   },
   "prettier": {
     "semi": false,
