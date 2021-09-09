@@ -18,45 +18,42 @@ keywords:
 
 ## Motivation
 
-This is a service that realizes profit by transaction batching
-for the purposes of arbitrage by controlling transaction ordering.
+This is a service that realizes profit by transaction batching for the purposes
+of arbitrage by controlling transaction ordering.
 
-Right now every user sends a transaction directly to the network mempool
-and thus give away the arbitrage, front-running, back-running
-opportunities to miners(or random bots).
+Right now every user sends a transaction directly to the network mempool and
+thus give away the arbitrage, front-running, back-running opportunities to
+miners(or random bots).
 
-OpenMEV provides a crediabily netural platform that enables 
-aggregation of transactions (batching) for the purposes of extracting 
-MEV profits and returning them back to the traders.
-
+OpenMEV provides a crediabily netural platform that enables aggregation of
+transactions (batching) for the purposes of extracting MEV profits and returning
+them back to the traders.
 
 ## What is MEV
 
-*Maximal Exhaustive/Extracted Value*
+_Maximal Exhaustive/Extracted Value_
 
-MEV is that which can be extracted from a blockchain by any agent without special
-permissions. Considering this permissionless nature, any agent with
-transaction ordering rights will be in a privileged position to perform
-the extraction. In Proof of Work blockchains, it is miners who determine
-transaction ordering within a block, hence the usage of "_miner_"
-term. In practice, bot operators seek to extract MEV by either paying
-high fees to increase the likelihood that their transactions are mined,
-or by fine-tuning their gas price choices in order to “time” their
-transactions right. 
+MEV is that which can be extracted from a blockchain by any agent without
+special permissions. Considering this permissionless nature, any agent with
+transaction ordering rights will be in a privileged position to perform the
+extraction. In Proof of Work blockchains, it is miners who determine transaction
+ordering within a block, hence the usage of "_miner_" term. In practice, bot
+operators seek to extract MEV by either paying high fees to increase the
+likelihood that their transactions are mined, or by fine-tuning their gas price
+choices in order to “time” their transactions right.
 
 ## General Considerations
 
-Note, that 'MEV' is a theoretical quantity that can only be approached asymptotically. 
-Unforseen extraction methods can and will be devised. For example, every new DeFi hack 
-is a type of MEV extraction event. 
+Note, that 'MEV' is a theoretical quantity that can only be approached
+asymptotically. Unforseen extraction methods can and will be devised. For
+example, every new DeFi hack is a type of MEV extraction event.
 
-In systems such as Flashbots there’s two classes of actors in their system _Searchers_
-and _Miners_. We use the generic label _Miner_ / _Block Producer_ for actors that bear the
-role of transaction inclusion and ordering.
+In systems such as Flashbots there’s two classes of actors in their system
+_Searchers_ and _Miners_. We use the generic label _Miner_ / _Block Producer_
+for actors that bear the role of transaction inclusion and ordering.
 
-_Searchers_ are any non-privileged actors aiming to profit from these opportunities.
-Miners can (and do) also act as searchers.
-
+_Searchers_ are any non-privileged actors aiming to profit from these
+opportunities. Miners can (and do) also act as searchers.
 
 ### Acknowledgements
 

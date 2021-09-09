@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx next",
     "start": "npx next start",
-    "build": "npx next build"
+    "build": "npx next build",
+    "fmt": "npx prettier --config .prettierrc.json --write ."
   },
   "license": "MIT",
   "dependencies": {
@@ -20,6 +21,6 @@
   "devDependencies": {
     "@types/node": "^14",
     "@types/react": "^17.0.20",
-    "prettier": "^2.3.2"
+    "prettier": "^2.4.0"
   }
 }

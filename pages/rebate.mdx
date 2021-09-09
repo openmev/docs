@@ -1,10 +1,10 @@
-## Rebate Calculations 
+## Rebate Calculations
 
-*Note*: naive implementation, expect changes
+_Note_: naive implementation, expect changes
 
 bundleCost = mev bribe + bundleTxs[1,2,...]
 
-gasAllowance =  mev bribe - bundleTxs[1,2,...]
+gasAllowance = mev bribe - bundleTxs[1,2,...]
 
 BundleTransactionGas[1,2,...] = Individual Gas Cost
 
@@ -14,20 +14,23 @@ max_gasRebate = (BundleId(BundleTransactionGas[1,2,...]))
 
 ```json
 {
-	"confidence": 80,
-	"price": 150,
-	"maxPriorityFeePerGas" :1.75,
-	"maxFeePerGas": 100
+  "confidence": 80,
+  "price": 150,
+  "maxPriorityFeePerGas": 1.75,
+  "maxFeePerGas": 100
 }
 ```
 
 ## Rebate Mechanism
 
-1. Eligible transactions are rebated based on the 80th confidence  interval for gas estimation pricing.
+1. Eligible transactions are rebated based on the 80th confidence interval for
+   gas estimation pricing.
 
-2. This is porportionally  distributed based on transactional weight. *Note: a naive formula would consider pairings, then slippage tolernance and  finally transactional amount*
+2. This is porportionally distributed based on transactional weight. _Note: a
+   naive formula would consider pairings, then slippage tolernance and finally
+   transactional amount_
 
-3. The amount of compensation is the remainder less fees to miners and network operational transactional costs. 
+3. The amount of compensation is the remainder less fees to miners and network
+   operational transactional costs.
 
 4. Compensation payouts occur no later than a half hour
-
