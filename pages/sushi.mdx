@@ -7,13 +7,24 @@ keywords:
   - docs
 ---
 
+
 # OpenMEV & Sushiswap
 
 OpenMEV and Sushiswap work together to recapture lost MEV profits so that Sushi
 traders can trade for free (up to 95%) on the exchange.
 
-This is not `gasless` transactions, these are `paid rebate` transactions! You
-get paid to trade more using OpenMEV.
+These are not `gasless` transactions, these are `paid rebate` transactions! 
+You get paid to trade more using OpenMEV.
+
+## Support and Help
+
+**Never Share your Private Keys or Seed Phrase with anyone!**
+
+**We will NEVER ask you to send any tokens / coins to any address!**
+
+- [Support Page](https://openmev.page.link/support)
+- [Discord Chat](https://openmev.page.link/support-chat)
+
 
 ## Trading for Free on Sushi.com
 
@@ -24,7 +35,24 @@ get paid to trade more using OpenMEV.
 
 3. Refunds are paid out in ETH/WETH/xSUSHI
 
-4. It can take up to 35 blocks to receive a refund
+4. It will take at least 35 blocks to receive a refund, no more than 50.
+
+### Getting Gas Pricing information
+
+Our API Endpoint is here
+
+```bash
+curl -s -L api.txprice.com | jq .blockPrices[0].estimatedPrices[3]
+```
+
+```json
+{
+  "confidence": 80,
+  "price": 112,
+  "maxPriorityFeePerGas": 1.76,
+  "maxFeePerGas": 222.52
+}
+```
 
 ## Engine
 
@@ -53,3 +81,5 @@ Orders are sorted based on their price, and order ID. Order IDs are generated at
 post time and is the only part of the matching engine that is time-dependent.
 However, the oldest order IDs are matched first so there is no incentive to post
 an order ahead of someone else’s.
+
+

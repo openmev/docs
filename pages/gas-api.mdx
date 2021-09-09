@@ -4,13 +4,29 @@ title: Gas Pricing API
 
 ## `api.txprice.com`
 
-### `/api`
+### Usage
 
-#### Usage
+#### Get Ethereum Transaction Pricing
 
 ```bash
 curl -L api.txprice.com
 ```
+#### Get Pricing at 95% confidence interval
+
+```bash
+curl -s -L api.txprice.com | jq .blockPrices[0].estimatedPrices[1]
+```
+
+```json
+{
+  "confidence": 95,
+  "price": 107,
+  "maxPriorityFeePerGas": 2.52,
+  "maxFeePerGas": 212.92
+}
+```
+
+## OpenAPI
 
 Returns a range of confidence intervals for gas prices needed to qualify a
 transaction for inclusion in the next block. Order of confidence intervals is
