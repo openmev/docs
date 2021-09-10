@@ -11,12 +11,15 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@next/mdx": "^11.1.2",
     "next": "^11.0.1",
     "next-themes": "^0.0.15",
     "nextra": "^1.1.0",
     "nextra-theme-docs": "^1.2.6",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "rehype-katex": "^6.0.1",
+    "remark-math": "^5.1.0"
   },
   "devDependencies": {
     "@types/node": "^14",
