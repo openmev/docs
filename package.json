@@ -1,12 +1,12 @@
 {
   "name": "@openmev/docs",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "documentation webapp",
   "main": "index.js",
   "scripts": {
-    "dev": "npx next",
+    "dev": "NODE_ENV=development npx next",
     "start": "npx next start",
-    "build": "npx next build",
+    "build": "NODE_ENV=production npx next build",
     "fmt": "npx prettier --config .prettierrc.json --write ."
   },
   "license": "MIT",
