@@ -1,3 +1,10 @@
 {
-  "recommendations": ["sanity-io.vscode-sanity"]
+  "recommendations": [
+    "sanity-io.vscode-sanity",
+    "ban.spellright",
+    "tintinweb.vscode-inline-bookmarks",
+    "editorconfig.editorconfig",
+    "davidanson.vscode-markdownlint",
+    "silvenon.mdx"
+  ]
 }

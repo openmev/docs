@@ -1,23 +1,10 @@
-import Callout from 'nextra-theme-docs/callout';
+# SushiSwap Router Function Calls
 
-# Transaction Rebate Mechanism
+## Router Function Calls
 
-<Callout emoji="️💡">
-  We are always improving this mechanism, post your own suggestion on
-  forums.manifoldfinance.com
-</Callout>
-
-## Transactions
-
-Type0 and Type2 Transactions
-
-Type0 transactions (Pre EIP-1559) should utilize the Price number under each
-confidence level.
-
-Type2 transactions (EIP-1559) should utilize the values for maxPriorityFeePerGas
-(also known as the "tip") and maxFeePerGas .
-
-## List of Transactions by Contract Function
+```
+0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F
+```
 
 | **$function_calls**                                       | **%eligible** |
 |:---------------------------------------------------------:|:-------------:|
@@ -44,34 +31,3 @@ Type2 transactions (EIP-1559) should utilize the values for maxPriorityFeePerGas
 | getAmountIn                                               | null          |
 | removeLiquidityETHWithPermitSupportingFeeOnTransferTokens | #             |
 | removeLiquidityETHSupportingFeeOnTransferTokens           | #             |
-
-
-### Transaction Pricing
-
-**maxPrice** Highest priced transaction in the mempool
-
-**currentBlockNumber** Block number at the time of prediction
-
-**msSinceLastBlock** Milliseconds since the last block was mined relative to
-when data was computed
-
-**blockNumber** Block this prediction is for
-
-**baseFeePerGas** Base fee per gas for current block in gwei. (Only type2
-transactions Post EIP-1559 have this value and it's burned by the network upon
-transaction success). estimatedTransactionCount Number of items we estimate will
-be included in next block based on mempool snapshot
-
-**confidence** 0-99 likelihood the next block will contain a transaction with a
-gas price >= to the listed price
-
-**Price** Price in Gwei (used for type0 transactions: Pre EIP-1559)
-
-**maxPriorityFeePerGas** Max priority fee per gas in gwei also known as the
-"tip" (used for type2 transactions: EIP-1559)
-
-**maxFeePerGas** Max fee per gas in gwei (used for type2 transactions:
-EIP-1559). Our current max fee heuristic is Base Fee \* 2 + Priority Fee. This
-is to protect against a 'rapid' rise in the base fee while your transaction fee
-is pending. In most cases, the actual transaction fee will approximate Base
-Fee + Priority Fee.
