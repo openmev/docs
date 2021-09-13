@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Callout from 'nextra-theme-docs/callout';
 
 # Rebating Transaction Costs
 
@@ -45,72 +44,45 @@ Rebating a transaction is determined by:
 
 ### Contract Function Eligibility
 
-<Callout type="warning" emoji="⚠️">
-  Currently only `swap*` are fully supported, with additional function calls to
-  be supported soon
-</Callout>
-
-|                    **function calls**                     | **% eligible** |
-| :-------------------------------------------------------: | :------------: |
-|                 swapExactTokensForTokens                  |      100       |
-|                   swapExactTokensForETH                   |      100       |
-|                   swapExactETHForTokens                   |      100       |
-|                   swapETHForExactTokens                   |      100       |
-|                       getAmountsOut                       |      null      |
-|                      addLiquidityETH                      |       50       |
-|                       addLiquidity                        |       50       |
-|                 swapTokensForExactTokens                  |      100       |
-|                       getAmountOut                        |      null      |
-|               removeLiquidityETHWithPermit                |      100       |
-|                   swapTokensForExactETH                   |      100       |
-|                 removeLiquidityWithPermit                 |       25       |
-|                    removeLiquidityETH                     |       25       |
-|                      removeLiquidity                      |       25       |
-|                          factory                          |      null      |
-|    swapExactTokensForETHSupportingFeeOnTransferTokens     |       #        |
-|   swapExactTokensForTokensSupportingFeeOnTransferTokens   |       #        |
-|                       getAmountsIn                        |      null      |
-|                           WETH                            |      null      |
-|    swapExactETHForTokensSupportingFeeOnTransferTokens     |       #        |
-|                        getAmountIn                        |      null      |
-| removeLiquidityETHWithPermitSupportingFeeOnTransferTokens |       #        |
-|      removeLiquidityETHSupportingFeeOnTransferTokens      |       #        |
+|                    **$function_calls**                    | **%eligible** |
+| :-------------------------------------------------------: | :-----------: |
+|                 swapExactTokensForTokens                  |      100      |
+|                   swapExactTokensForETH                   |      100      |
+|                   swapExactETHForTokens                   |      100      |
+|                   swapETHForExactTokens                   |      100      |
+|                       getAmountsOut                       |     null      |
+|                      addLiquidityETH                      |      50       |
+|                       addLiquidity                        |      50       |
+|                 swapTokensForExactTokens                  |      100      |
+|                       getAmountOut                        |     null      |
+|               removeLiquidityETHWithPermit                |      100      |
+|                   swapTokensForExactETH                   |      100      |
+|                 removeLiquidityWithPermit                 |      25       |
+|                    removeLiquidityETH                     |      25       |
+|                      removeLiquidity                      |      25       |
+|                          factory                          |     null      |
+|    swapExactTokensForETHSupportingFeeOnTransferTokens     |       #       |
+|   swapExactTokensForTokensSupportingFeeOnTransferTokens   |       #       |
+|                       getAmountsIn                        |     null      |
+|                           WETH                            |     null      |
+|    swapExactETHForTokensSupportingFeeOnTransferTokens     |       #       |
+|                        getAmountIn                        |     null      |
+| removeLiquidityETHWithPermitSupportingFeeOnTransferTokens |       #       |
+|      removeLiquidityETHSupportingFeeOnTransferTokens      |       #       |
 
 ## Rebate Calculations
 
-### Parameters
+_Note_: naive implementation, expect changes
 
-```
-transactionWeight = $function_calls[]
-```
+bundleCost = mev bribe + bundleTxs[1,2,...]
 
-```
-bundleTxs = transactionWeight<1,2,3...>
-```
+gasAllowance = mev bribe - bundleTxs[1,2,...]
 
-```
-'bundleCost' = mev bribe + bundleTxs<1,2,...>
-```
+BundleTransactionGas[1,2,...] = Individual Gas Cost
 
-```
-'gasAllowance' = mev bribe - bundleTxs<1,2,...>
-```
+BundleId = The Block Number (or hash?) in which the bundle was included
 
-```
-'BundleTransactionGas'[1,2,...] = Individual Gas Cost
-```
-
-```
-'BundleId' = The Block Number (or hash?) in which the bundle was included
-```
-
-```
-'max_gasRebate' = (BundleId(BundleTransactionGas[1,2,...]))
-```
-
-### Gas Pricing Response
-
-> via [api.txprice.com](https://api.txprice.com)
+max_gasRebate = (BundleId(BundleTransactionGas[1,2,...]))
 
 ```json
 {
