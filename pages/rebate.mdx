@@ -44,6 +44,12 @@ Rebating a transaction is determined by:
 
 ### Contract Function Eligibility
 
+
+<Callout type="warning" emoji="⚠️">
+  Currently only `swap*` are fully supported, with additional function calls to be supported soon
+</Callout>
+
+
 |                    **$function_calls**                    | **%eligible** |
 | :-------------------------------------------------------: | :-----------: |
 |                 swapExactTokensForTokens                  |      100      |
@@ -72,17 +78,32 @@ Rebating a transaction is determined by:
 
 ## Rebate Calculations
 
-_Note_: naive implementation, expect changes
+Legend: 
 
-bundleCost = mev bribe + bundleTxs[1,2,...]
+> **`<` and `>` denote discrete objects**
 
-gasAllowance = mev bribe - bundleTxs[1,2,...]
+> **`[`and `]` denote an array within a discrete object**
 
-BundleTransactionGas[1,2,...] = Individual Gas Cost
+### Parameters
 
-BundleId = The Block Number (or hash?) in which the bundle was included
+transactionWeight = $function_calls[]
 
-max_gasRebate = (BundleId(BundleTransactionGas[1,2,...]))
+bundleTxs = transactionWeight<1,2,3...>
+
+'bundleCost' = mev bribe + bundleTxs<1,2,...>
+
+'gasAllowance' = mev bribe - bundleTxs<1,2,...>
+
+'BundleTransactionGas'[1,2,...] = Individual Gas Cost
+
+'BundleId' = The Block Number (or hash?) in which the bundle was included
+
+'max_gasRebate' = (BundleId(BundleTransactionGas[1,2,...]))
+
+### Gas Pricing Response
+
+> via [api.txprice.com](https://api.txprice.com)
+
 
 ```json
 {
