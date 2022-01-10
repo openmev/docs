@@ -7,3 +7,5 @@ cache/
 .cache
 build
 dist/
+*.js
+

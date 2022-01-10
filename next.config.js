@@ -5,4 +5,10 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.js',
   unstable_staticImage: true,
 });
-module.exports = withNextra();
+
+/** @type {import('next').NextConfig} */
+const config = {
+  reactStrictMode: true,
+}
+
+module.exports = withNextra(config);
