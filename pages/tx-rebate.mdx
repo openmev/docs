@@ -50,6 +50,8 @@ fully plan on expanding coverage to additional functions in the future
 
 ### Transaction Pricing
 
+For more detailed document detailing the v2 api, [see this specification document](https://hackmd.io/@sbacha/price-network-outage)
+
 **maxPrice** Highest priced transaction in the mempool
 
 **currentBlockNumber** Block number at the time of prediction
@@ -77,3 +79,8 @@ EIP-1559). Our current max fee heuristic is Base Fee \* 2 + Priority Fee. This
 is to protect against a 'rapid' rise in the base fee while your transaction fee
 is pending. In most cases, the actual transaction fee will approximate Base
 Fee + Priority Fee.
+
+**networkCongestion** A normalized number that can be used to gauge the congestion level of the network, with 0 meaning not congested and 1 meaning extremely congested
+
+**networkOutage**
+networkOutage - A true/false indicating a recognized network outage event. True means we are currently experiencing a network outage
