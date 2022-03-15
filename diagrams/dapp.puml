@@ -1,0 +1,18 @@
+@startuml
+participant dApp
+participant OpenMEV
+participant Ethereum
+
+note left of OpenMEV: SushiGuard MEV Protection
+dApp -> OpenMEV: sendSwapTransaction(MEVProtected)
+activate OpenMEV
+note left of Ethereum : MEV Bundling & Gas Rebating
+OpenMEV -> Ethereum: sendBundle(userTransactions[], arbitrageTxs[])
+activate Ethereum
+return transactionStatus, type = OpenMEV(Eligible)
+Ethereum  -> OpenMEV: userSwap(userTransactions[], gasRebateTx[]) 
+Ethereum  -> OpenMEV: userSwap(userTransactions[], NO_REBATE) 
+return transactionStatus, type = OpenMEV(Refund or NO_REBATE)
+
+
+@enduml
