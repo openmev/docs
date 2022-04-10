@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1172px" preserveAspectRatio="none" style="width:1244px;height:1172px;background:#FFFFFF;" version="1.1" viewBox="0 0 1244 1172" width="1244px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="137.6641" style="stroke:#181818;stroke-width:1.0;" width="10" x="515.5" y="102.5625"/><rect fill="#FFFFFF" height="32.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="515.5" y="284.4922"/><rect fill="#FFFFFF" height="473.9922" style="stroke:#181818;stroke-width:1.0;" width="10" x="515.5" y="493.5547"/><rect fill="#FFFFFF" height="54.832" style="stroke:#181818;stroke-width:1.0;" width="10" x="515.5" y="1038.8125"/><rect fill="#FFFFFF" height="29.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="889.5" y="181.9609"/><rect fill="#FFFFFF" height="159.6641" style="stroke:#181818;stroke-width:1.0;" width="10" x="889.5" y="679.3516"/><rect height="116.5313" style="stroke:#000000;stroke-width:1.5;fill:none;" width="400" x="838.5" y="694.3516"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="164" x2="164" y1="36.2969" y2="1137.3438"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="520.5" x2="520.5" y1="36.2969" y2="1137.3438"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="894.5" x2="894.5" y1="36.2969" y2="1137.3438"/><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="53" x="138" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="145" y="24.9951">dApp</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="53" x="138" y="1136.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="145" y="1156.3389">dApp</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="84" x="478.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="485.5" y="24.9951">OpenMEV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="84" x="478.5" y="1136.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="485.5" y="1156.3389">OpenMEV</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="848.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="855.5" y="24.9951">MiningPool</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="848.5" y="1136.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="855.5" y="1156.3389">MiningPool</text><rect fill="#FFFFFF" height="137.6641" style="stroke:#181818;stroke-width:1.0;" width="10" x="515.5" y="102.5625"/><rect fill="#FFFFFF" height="32.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="515.5" y="284.4922"/><rect fill="#FFFFFF" height="473.9922" style="stroke:#181818;stroke-width:1.0;" width="10" x="515.5" y="493.5547"/><rect fill="#FFFFFF" height="54.832" style="stroke:#181818;stroke-width:1.0;" width="10" x="515.5" y="1038.8125"/><rect fill="#FFFFFF" height="29.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="889.5" y="181.9609"/><rect fill="#FFFFFF" height="159.6641" style="stroke:#181818;stroke-width:1.0;" width="10" x="889.5" y="679.3516"/><path d="M432,51.2969 L432,76.2969 L515,76.2969 L515,61.2969 L505,51.2969 L432,51.2969 " fill="#00FFFF" style="stroke:#181818;stroke-width:0.5;"/><path d="M505,51.2969 L505,61.2969 L515,61.2969 L505,51.2969 " fill="#00FFFF" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="438" y="68.3638">JSON-RPC</text><polygon fill="#181818" points="503.5,98.5625,513.5,102.5625,503.5,106.5625,507.5,102.5625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="164.5" x2="509.5" y1="102.5625" y2="102.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="323" x="171.5" y="97.4966">openmev_ActiveMarkets(name, desc, members[])</text><path d="M839,115.5625 L839,140.5625 L889,140.5625 L889,125.5625 L879,115.5625 L839,115.5625 " fill="#00FFFF" style="stroke:#181818;stroke-width:0.5;"/><path d="M879,115.5625 L879,125.5625 L889,125.5625 L879,115.5625 " fill="#00FFFF" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="845" y="132.6294">WSS</text><polygon fill="#181818" points="877.5,177.9609,887.5,181.9609,877.5,185.9609,881.5,181.9609" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="525.5" x2="883.5" y1="181.9609" y2="181.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="341" x="532.5" y="161.7622">createPrivacyGroup(MiningPool pub key, name, desc,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="532.5" y="176.895">members[])</text><polygon fill="#181818" points="536.5,207.0938,526.5,211.0938,536.5,215.0938,532.5,211.0938" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="530.5" x2="893.5" y1="211.0938" y2="211.0938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="213" x="542.5" y="206.0278">privacyGroupId, type = OpenMEV</text><polygon fill="#181818" points="175.5,236.2266,165.5,240.2266,175.5,244.2266,171.5,240.2266" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="169.5" x2="519.5" y1="240.2266" y2="240.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="181.5" y="235.1606">privacyGroupId</text><polygon fill="#181818" points="503.5,280.4922,513.5,284.4922,503.5,288.4922,507.5,284.4922" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="164.5" x2="509.5" y1="284.4922" y2="284.4922"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="300" x="171.5" y="264.2935">manifold_getTransactionCount(signer address,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="171.5" y="279.4263">privacyGroupId)</text><polygon fill="#181818" points="175.5,312.625,165.5,316.625,175.5,320.625,171.5,316.625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="169.5" x2="519.5" y1="316.625" y2="316.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="181.5" y="311.5591">quantity</text><path d="M28,297.4922 L28,322.4922 L159,322.4922 L159,307.4922 L149,297.4922 L28,297.4922 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M149,297.4922 L149,307.4922 L159,307.4922 L149,297.4922 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="34" y="314.5591">nonce = quantity</text><line style="stroke:#181818;stroke-width:1.0;" x1="164.5" x2="206.5" y1="379.0234" y2="379.0234"/><line style="stroke:#181818;stroke-width:1.0;" x1="206.5" x2="206.5" y1="379.0234" y2="392.0234"/><line style="stroke:#181818;stroke-width:1.0;" x1="165.5" x2="206.5" y1="392.0234" y2="392.0234"/><polygon fill="#181818" points="175.5,388.0234,165.5,392.0234,175.5,396.0234,171.5,392.0234" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="338" x="171.5" y="343.6919">RLPSerializeBundle encode(data, nonce, privateFrom</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="328" x="171.5" y="358.8247">= MiningPool pub key, privateFor = privacyGroupId,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="171.5" y="373.9575">restriction = restricted)</text><path d="M5,336.125 L5,391.125 L160,391.125 L160,346.125 L150,336.125 L5,336.125 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M150,336.125 L150,346.125 L160,346.125 L150,336.125 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="11" y="353.1919">data is rlp encoded</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="134" x="11" y="368.3247">contract deployment</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="11" y="383.4575">or call</text><line style="stroke:#181818;stroke-width:1.0;" x1="164.5" x2="206.5" y1="436.2891" y2="436.2891"/><line style="stroke:#181818;stroke-width:1.0;" x1="206.5" x2="206.5" y1="436.2891" y2="449.2891"/><line style="stroke:#181818;stroke-width:1.0;" x1="165.5" x2="206.5" y1="449.2891" y2="449.2891"/><polygon fill="#181818" points="175.5,445.2891,165.5,449.2891,175.5,453.2891,171.5,449.2891" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="327" x="171.5" y="416.0903">sign(rlp encoded private transaction, signer private</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="171.5" y="431.2231">key)</text><polygon fill="#181818" points="503.5,489.5547,513.5,493.5547,503.5,497.5547,507.5,493.5547" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="164.5" x2="509.5" y1="493.5547" y2="493.5547"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="312" x="171.5" y="473.356">manifold_sendBundle(rlp encoded signed private</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="171.5" y="488.4888">transaction)</text><line style="stroke:#181818;stroke-width:1.0;" x1="525.5" x2="567.5" y1="522.6875" y2="522.6875"/><line style="stroke:#181818;stroke-width:1.0;" x1="567.5" x2="567.5" y1="522.6875" y2="535.6875"/><line style="stroke:#181818;stroke-width:1.0;" x1="526.5" x2="567.5" y1="535.6875" y2="535.6875"/><polygon fill="#181818" points="536.5,531.6875,526.5,535.6875,536.5,539.6875,532.5,535.6875" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="246" x="532.5" y="517.6216">parse(rlp encoded private transaction)</text><line style="stroke:#181818;stroke-width:1.0;" x1="525.5" x2="567.5" y1="564.8203" y2="564.8203"/><line style="stroke:#181818;stroke-width:1.0;" x1="567.5" x2="567.5" y1="564.8203" y2="577.8203"/><line style="stroke:#181818;stroke-width:1.0;" x1="526.5" x2="567.5" y1="577.8203" y2="577.8203"/><polygon fill="#181818" points="536.5,573.8203,526.5,577.8203,536.5,581.8203,532.5,577.8203" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="182" x="532.5" y="559.7544">validate(private transaction)</text><line style="stroke:#181818;stroke-width:1.0;" x1="525.5" x2="567.5" y1="622.0859" y2="622.0859"/><line style="stroke:#181818;stroke-width:1.0;" x1="567.5" x2="567.5" y1="622.0859" y2="635.0859"/><line style="stroke:#181818;stroke-width:1.0;" x1="526.5" x2="567.5" y1="635.0859" y2="635.0859"/><polygon fill="#181818" points="536.5,631.0859,526.5,635.0859,536.5,639.0859,532.5,635.0859" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="273" x="532.5" y="601.8872">base64 encode(rlp encoded signed private</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="532.5" y="617.02">transaction)</text><polygon fill="#181818" points="877.5,675.3516,887.5,679.3516,877.5,683.3516,881.5,679.3516" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="525.5" x2="883.5" y1="679.3516" y2="679.3516"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="340" x="532.5" y="659.1528">send(payload = base64 encoded private transaction,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="281" x="532.5" y="674.2856">from = MiningPool pub key, privacyGroupId)</text><path d="M838.5,694.3516 L916.5,694.3516 L916.5,701.4844 L906.5,711.4844 L838.5,711.4844 L838.5,694.3516 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="116.5313" style="stroke:#000000;stroke-width:1.5;" width="400" x="838.5" y="694.3516"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="33" x="853.5" y="707.4185">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="221" x="931.5" y="706.562">[asynchronous for each member]</text><line style="stroke:#181818;stroke-width:1.0;" x1="899.5" x2="941.5" y1="732.6172" y2="732.6172"/><line style="stroke:#181818;stroke-width:1.0;" x1="941.5" x2="941.5" y1="732.6172" y2="745.6172"/><line style="stroke:#181818;stroke-width:1.0;" x1="900.5" x2="941.5" y1="745.6172" y2="745.6172"/><polygon fill="#181818" points="910.5,741.6172,900.5,745.6172,910.5,749.6172,906.5,745.6172" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="320" x="906.5" y="727.5513">encrypt(member MiningPool private key, payload)</text><line style="stroke:#181818;stroke-width:1.0;" x1="899.5" x2="941.5" y1="789.8828" y2="789.8828"/><line style="stroke:#181818;stroke-width:1.0;" x1="941.5" x2="941.5" y1="789.8828" y2="802.8828"/><line style="stroke:#181818;stroke-width:1.0;" x1="900.5" x2="941.5" y1="802.8828" y2="802.8828"/><polygon fill="#181818" points="910.5,798.8828,900.5,802.8828,910.5,806.8828,906.5,802.8828" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="310" x="906.5" y="769.6841">sendToMember(member MiningPool private key,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="906.5" y="784.8169">encrypted payload)</text><polygon fill="#181818" points="536.5,835.0156,526.5,839.0156,536.5,843.0156,532.5,839.0156" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="530.5" x2="893.5" y1="839.0156" y2="839.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="542.5" y="833.9497">private transaction key</text><line style="stroke:#181818;stroke-width:1.0;" x1="525.5" x2="567.5" y1="883.2813" y2="883.2813"/><line style="stroke:#181818;stroke-width:1.0;" x1="567.5" x2="567.5" y1="883.2813" y2="896.2813"/><line style="stroke:#181818;stroke-width:1.0;" x1="526.5" x2="567.5" y1="896.2813" y2="896.2813"/><polygon fill="#181818" points="536.5,892.2813,526.5,896.2813,536.5,900.2813,532.5,896.2813" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="315" x="532.5" y="863.0825">sign private transaction(node private key, data =</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="532.5" y="878.2153">private tx hash)</text><line style="stroke:#181818;stroke-width:1.0;" x1="525.5" x2="567.5" y1="925.4141" y2="925.4141"/><line style="stroke:#181818;stroke-width:1.0;" x1="567.5" x2="567.5" y1="925.4141" y2="938.4141"/><line style="stroke:#181818;stroke-width:1.0;" x1="526.5" x2="567.5" y1="938.4141" y2="938.4141"/><polygon fill="#181818" points="536.5,934.4141,526.5,938.4141,536.5,942.4141,532.5,938.4141" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="273" x="532.5" y="920.3481">add _mempool(signed private transaction)</text><polygon fill="#181818" points="175.5,963.5469,165.5,967.5469,175.5,971.5469,171.5,967.5469" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="169.5" x2="519.5" y1="967.5469" y2="967.5469"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="181.5" y="962.481">private tx hash</text><line style="stroke:#181818;stroke-width:1.0;" x1="520.5" x2="562.5" y1="996.6797" y2="996.6797"/><line style="stroke:#181818;stroke-width:1.0;" x1="562.5" x2="562.5" y1="996.6797" y2="1009.6797"/><line style="stroke:#181818;stroke-width:1.0;" x1="521.5" x2="562.5" y1="1009.6797" y2="1009.6797"/><polygon fill="#181818" points="531.5,1005.6797,521.5,1009.6797,531.5,1013.6797,527.5,1009.6797" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="527.5" y="991.6138">private transaction mined</text><polygon fill="#181818" points="503.5,1034.8125,513.5,1038.8125,503.5,1042.8125,507.5,1038.8125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="164.5" x2="509.5" y1="1038.8125" y2="1038.8125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="171.5" y="1033.7466">eth_getTransactionByHash(private tx hash)</text><polygon fill="#181818" points="175.5,1089.6445,165.5,1093.6445,175.5,1097.6445,171.5,1093.6445" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="169.5" x2="519.5" y1="1093.6445" y2="1093.6445"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="171" x="181.5" y="1088.5786">private market transaction</text><path d="M27,1051.8125 L27,1121.8125 L159,1121.8125 L159,1061.8125 L149,1051.8125 L27,1051.8125 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M149,1051.8125 L149,1061.8125 L159,1061.8125 L149,1051.8125 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="33" y="1068.8794">private tx hash =</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="33" y="1084.0122">input field of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="95" x="33" y="1099.145">private marker</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="33" y="1114.2778">transaction</text><!--MD5=[5725afe096e590f27ae3fa6fbb9ccbb1]
+@startuml
+skinparam maxMessageSize 350 
+
+participant dApp
+participant OpenMEV
+participant MiningPool
+
+note left of OpenMEV #aqua: JSON-RPC
+
+' reatePrivacyGroup
+dApp -> OpenMEV: openmev_ActiveMarkets(name, desc, members[])
+activate OpenMEV
+note left of MiningPool #aqua: WSS
+OpenMEV -> MiningPool: createPrivacyGroup(MiningPool pub key, name, desc, members[])
+activate MiningPool
+return privacyGroupId, type = OpenMEV
+return privacyGroupId
+
+' getTransactionCount
+dApp -> OpenMEV: manifold_getTransactionCount(signer address, privacyGroupId)
+activate OpenMEV
+return quantity
+note left: nonce = quantity
+
+dApp->dApp: RLPSerializeBundle encode(data, nonce, privateFrom = MiningPool pub key, privateFor = privacyGroupId, restriction = restricted)
+note left
+    data is rlp encoded
+    contract deployment
+    or call
+end note
+dApp->dApp: sign(rlp encoded private transaction, signer private key)
+
+' sendRawTransaction
+dApp -> OpenMEV: manifold_sendBundle(rlp encoded signed private transaction)
+activate OpenMEV
+OpenMEV -> OpenMEV: parse(rlp encoded private transaction)
+OpenMEV -> OpenMEV: validate(private transaction)
+OpenMEV -> OpenMEV: base64 encode(rlp encoded signed private transaction)
+OpenMEV -> MiningPool: send(payload = base64 encoded private transaction, from = MiningPool pub key, privacyGroupId)
+activate MiningPool
+loop asynchronous for each member
+MiningPool -> MiningPool: encrypt(member MiningPool private key, payload)
+MiningPool -> MiningPool: sendToMember(member MiningPool private key, encrypted payload)
+end
+return private transaction key
+OpenMEV -> OpenMEV: sign private transaction(node private key, data = private tx hash)
+OpenMEV -> OpenMEV: add _mempool(signed private transaction)
+return private tx hash
+
+OpenMEV -> OpenMEV: private transaction mined
+
+' getTransactionByHash
+dApp -> OpenMEV: eth_getTransactionByHash(private tx hash)
+activate OpenMEV
+return private market transaction
+note left
+    private tx hash =
+    input field of
+    private marker
+    transaction
+end note
+@enduml
+
+@startuml
+skinparam maxMessageSize 350 
+
+participant dApp
+participant OpenMEV
+participant MiningPool
+
+note left of OpenMEV #aqua: JSON-RPC
+
+dApp -> OpenMEV: openmev_ActiveMarkets(name, desc, members[])
+activate OpenMEV
+note left of MiningPool #aqua: WSS
+OpenMEV -> MiningPool: createPrivacyGroup(MiningPool pub key, name, desc, members[])
+activate MiningPool
+return privacyGroupId, type = OpenMEV
+return privacyGroupId
+
+dApp -> OpenMEV: manifold_getTransactionCount(signer address, privacyGroupId)
+activate OpenMEV
+return quantity
+note left: nonce = quantity
+
+dApp->dApp: RLPSerializeBundle encode(data, nonce, privateFrom = MiningPool pub key, privateFor = privacyGroupId, restriction = restricted)
+note left
+    data is rlp encoded
+    contract deployment
+    or call
+end note
+dApp->dApp: sign(rlp encoded private transaction, signer private key)
+
+dApp -> OpenMEV: manifold_sendBundle(rlp encoded signed private transaction)
+activate OpenMEV
+OpenMEV -> OpenMEV: parse(rlp encoded private transaction)
+OpenMEV -> OpenMEV: validate(private transaction)
+OpenMEV -> OpenMEV: base64 encode(rlp encoded signed private transaction)
+OpenMEV -> MiningPool: send(payload = base64 encoded private transaction, from = MiningPool pub key, privacyGroupId)
+activate MiningPool
+loop asynchronous for each member
+MiningPool -> MiningPool: encrypt(member MiningPool private key, payload)
+MiningPool -> MiningPool: sendToMember(member MiningPool private key, encrypted payload)
+end
+return private transaction key
+OpenMEV -> OpenMEV: sign private transaction(node private key, data = private tx hash)
+OpenMEV -> OpenMEV: add _mempool(signed private transaction)
+return private tx hash
+
+OpenMEV -> OpenMEV: private transaction mined
+
+dApp -> OpenMEV: eth_getTransactionByHash(private tx hash)
+activate OpenMEV
+return private market transaction
+note left
+    private tx hash =
+    input field of
+    private marker
+    transaction
+end note
+@enduml
+
+PlantUML version 1.2022.4beta2(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
