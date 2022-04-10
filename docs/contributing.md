@@ -116,3 +116,41 @@ git branch -b test/a-feature
 git branch -b feat/sidebar
 git branch -b fix/b-feature
 ```
+
+
+### Acknowledgements
+
+> Not an exhaustive list
+
+- Nikolai Mushegian
+- Florian (@floki)
+- BoringCrypto
+- Barry London
+- Banteg
+- BobTheBuilder
+- WeArethe0.3xpercent (group)
+- Robert Miller (@bertmiller)
+- Edgar Arout (@fxfactorial)
+- Alex Obadia
+- Nathan (@CodeForcer)
+- 0xMaki
+- Joseph Delong (@dangerousfood)
+- Alexey Akhunov (@AlexeyAkhunov)
+- Igor Barinov (@igorbarinov)
+- bokkypoobah (@bokkypoobah)
+- x48 (@x48-crypto)
+- Jonas Chevalier (@zimbatm)
+- BMG (@brianmcgee)
+- Aldo Borrero (@aldoborrero)
+- Sandy Bradley (@sandybradley)
+- Connor Gervin (@Connor-Gervin)
+- OhHeyMatty
+- Chad
+- Manifold Finance Telegram Chat (t.me/manifoldfinance)
+- Ramin (@chillichelli)
+- Caleb Sheridan (Eden Network)
+- ControlCplusControlV
+- I Am Software (@matthewlilley)
+- Antony Ducommun
+- Jörg Thalheim (@Mic92)
+- Tom Schmidt (dragonfly capital)
