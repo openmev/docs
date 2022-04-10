@@ -1,14 +1,16 @@
 ---
 sidebar_position: 8
+title: Community contributing
 ---
 
 # Contributing
 
 :tada: Thank you for being interested in contributing to the OpenMEV project!:tada:
 
+
 Feel welcome and read the following sections in order to know how to ask questions and how to work on something.
 
-We're really glad you're reading this, because we need volunteer developers to help this project come to fruition. 👏
+
 
 ## Pull Requests
 
