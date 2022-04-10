@@ -12,8 +12,6 @@ sidebar_position: 9
 - libmev (typescript library): https://github.com/manifoldfinance/libmev
 - Documentation: https://github.com/openmev/docs
 
-
 ## Chat
 
 - Telegram: https://t.me/manifoldfinance
-
