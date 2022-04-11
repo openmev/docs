@@ -45,11 +45,47 @@ blockchains. With that understanding it is important not to rely solely on such 
 [MEV or Maximal Extractable Value](https://medium.com/-research/we-live-in-a-mempool-backrunning-the-mev-crisis-a4ea0b493b05)
 is the value of the ability to order transactions within a block or blocks.
 
-- Tom Schmidt, Dragonfly Capital 
-:::
+- Tom Schmidt, Dragonfly Capital :::
 
 ## Getting started
 
 OpenMEV consists of several components. If you want to learn more about the way it works, go to our
 [technical overview](/technical-reference/intro). If you have an application or a service that needs a system to prevent
 MEV attacks, you can read our guides on how to integrate our SDK.
+
+### Acknowledgements
+
+> Not an exhaustive list
+
+- Nikolai Mushegian
+- Florian (@floki)
+- BoringCrypto
+- Barry London
+- Banteg
+- BobTheBuilder
+- WeArethe0.3xpercent (group)
+- Robert Miller (@bertmiller)
+- Edgar Arout (@fxfactorial)
+- Alex Obadia
+- Nathan (@CodeForcer)
+- 0xMaki
+- Joseph Delong (@dangerousfood)
+- Alexey Akhunov (@AlexeyAkhunov)
+- Igor Barinov (@igorbarinov)
+- bokkypoobah (@bokkypoobah)
+- x48 (@x48-crypto)
+- Jonas Chevalier (@zimbatm)
+- BMG (@brianmcgee)
+- Aldo Borrero (@aldoborrero)
+- Sandy Bradley (@sandybradley)
+- Connor Gervin (@Connor-Gervin)
+- OhHeyMatty
+- Chad
+- Manifold Finance Telegram Chat (t.me/manifoldfinance)
+- Ramin (@chillichelli)
+- Caleb Sheridan (Eden Network)
+- ControlCplusControlV
+- I Am Software (@matthewlilley)
+- Antony Ducommun
+- Jörg Thalheim (@Mic92)
+- Tom Schmidt (dragonfly capital)
