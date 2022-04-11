@@ -1,7 +1,7 @@
 {
   "name": "openmev-docs",
   "description": "OpenMEV documentation website.",
-  "version": "2.0.0-rc1",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -37,19 +37,13 @@
   },
   "browserslist": {
     "production": [
-      ">0.3% ",
-      "not IE > 0 ",
-      "not op_mini all ",
-      "not dead ",
-      "last 2 Edge major versions ",
-      "last 1 Chrome version ",
-      "last 2 iOS major versions ",
-      "last 1 Firefox version "
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 edge version",
       "last 1 safari version"
     ]
   }
