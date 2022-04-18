@@ -1,10 +1,13 @@
 # [docs.openmev.org](https://docs.openmev.org)
 
-## Overview
+> documentation and reference material for OpenMEV
 
+[![nodejs](https://github.com/openmev/docs/actions/workflows/nodejs.yml/badge.svg)](https://github.com/openmev/docs/actions/workflows/nodejs.yml)
 
-## Development
+### What is OpenMEV?
 
+OpenMEV aims to provide a credible neutral platform for facilitating both aggregation and direct communication channels
+between block validators, block producers and block synchronizers for the Ethereum and EVM-based networks.
 
 ## License
 
