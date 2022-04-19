@@ -2,15 +2,16 @@
 sidebar_position: 5
 ---
 
-# OpenMEV RPC
+# SecureRPC and OpenMEV RPC Gateway
 
-> Supported RPC and API Endpoints for OpenMEV
+> Supported RPC and API Endpoints for SecureRPC and OpenMEV
 
 OpenMEV provides HTTP endpoints to interact with the reputation service and HTTP/WS endpoints to access onchain data
 with a subgraph.
 
 :::tip If you want to use the OpenMEV APIs with a JavaScript library you can also use the npm package
-[`libmev`](https://github.com/manifoldfinance/libmev). :::
+[`libmev`](https://github.com/manifoldfinance/libmev). 
+:::
 
 ## `Websocket`
 
@@ -20,7 +21,7 @@ with a subgraph.
 wscat -c wss://api.sushirelay.com/v1
 ```
 
-```json title="Response"
+```jsonc title="Response"
 < {"method":"manifold_motd","jsonrpc":"2.0","params":{"result":{"notice":"THIS IS A NOTICE OF MONITORING OF MANIFOLD FINANCE, INC NETWORK INFORMATION SYSTEMS  By logging into Manifold Finance, Inc computer systems, you acknowledge and consent to monitoring of this system.  Network Policy <https://docs.manifoldfinance.com/network/policy>  By using this network, you certify that you have read, understand, and agree to abide by the Rules of Behavior for Manifold Finance Network Platform."}}}
 >
 ```
@@ -71,6 +72,59 @@ eth_getUncleCountByBlockNumber
 eth_sign
 eth_signTypedData
 eth_sendRawTransaction
+```
+
+#### Example: `eth_blockNumber`
+
+```shell
+curl -X POST 'https://api.sushirelay.com/v1' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+	"jsonrpc":"2.0",
+	"method":"eth_blockNumber",
+	"params":[],
+	"id":83
+}'
+```
+
+> Returns
+
+```jsonc
+{
+    "id": "83",
+    "jsonrpc": "2.0",
+    "result": "0xdef739"
+}
+```
+
+#### Example: Javascript `eth_blockNumber`
+
+```javascript
+const axios = require('axios');
+let data = JSON.stringify({
+  "jsonrpc": "2.0",
+  "method": "eth_blockNumber",
+  "params": [],
+  "id": 83
+});
+
+const config = {
+  method: 'post',
+  url: 'https://api.sushirelay.com/v1',
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  timeout: 1000,
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### OpenMEV Transaction
