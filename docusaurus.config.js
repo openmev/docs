@@ -29,20 +29,25 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+  ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/openmev/docs/edit/main/',
           routeBasePath: '/',
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+      },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
           customCss2: require.resolve('./src/css/colors.css'),
         },
       }),
     ],
-  ],
+    
 
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
