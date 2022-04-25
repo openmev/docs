@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopenmev_docs=self.webpackChunkopenmev_docs||[]).push([[121],{8070:e=>{e.exports=JSON.parse('[{"name":"json rpc","permalink":"/tags/json-rpc","count":3},{"name":"gateway","permalink":"/tags/gateway","count":3},{"name":"api","permalink":"/tags/api","count":3}]')}}]);
