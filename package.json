@@ -1,7 +1,7 @@
 {
   "name": "openmev-docs",
   "description": "OpenMEV documentation website.",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -16,6 +16,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@cmfcmf/docusaurus-search-local": "^0.10.0",
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/preset-classic": "2.0.0-beta.18",
     "@mdx-js/react": "^1.6.22",
@@ -37,9 +38,10 @@
   },
   "browserslist": {
     "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
+      ">0.3%",
+      "not IE > 0",
+      "not op_mini all",
+      "not dead"
     ],
     "development": [
       "last 1 chrome version",

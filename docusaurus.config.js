@@ -1,3 +1,9 @@
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -6,11 +12,19 @@ module.exports = {
   url: 'https://docs.openmev.org',
   baseUrl: '/',
   favicon: '/img/favicon.ico',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   organizationName: 'openmev',
   projectName: 'docs',
-
+  plugins: [
+    [
+      require.resolve('@cmfcmf/docusaurus-search-local'),
+      {
+        indexBlog: false,
+      },
+    ],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -33,6 +47,8 @@ module.exports = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
         additionalLanguages: ['solidity'],
       },
       navbar: {
@@ -103,7 +119,7 @@ module.exports = {
             ],
           },
         ],
-        copyright: `Copyright © 2021 CommodityStream llc. | All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Manifold Finance, Inc. | All rights reserved.`,
       },
       colorMode: {
         defaultMode: 'dark',
