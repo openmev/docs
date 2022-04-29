@@ -1806,9 +1806,9 @@
     "@docusaurus/utils-validation" "2.0.0-beta.18"
     tslib "^2.3.1"
 
-"@docusaurus/plugin-sitemap@2.0.0-beta.18":
+"@docusaurus/plugin-sitemap@2.0.0-beta.18", "@docusaurus/plugin-sitemap@^2.0.0-beta.18":
   version "2.0.0-beta.18"
-  resolved "https://registry.npmjs.org/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-beta.18.tgz"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-beta.18.tgz#7e8217e95bede5719bd02265dcf7eb2fea76b675"
   integrity sha512-Klonht0Ye3FivdBpS80hkVYNOH+8lL/1rbCPEV92rKhwYdwnIejqhdKct4tUTCl8TYwWiyeUFQqobC/5FNVZPQ==
   dependencies:
     "@docusaurus/core" "2.0.0-beta.18"
@@ -1819,9 +1819,9 @@
     sitemap "^7.1.1"
     tslib "^2.3.1"
 
-"@docusaurus/preset-classic@2.0.0-beta.18":
+"@docusaurus/preset-classic@^2.0.0-beta.18":
   version "2.0.0-beta.18"
-  resolved "https://registry.npmjs.org/@docusaurus/preset-classic/-/preset-classic-2.0.0-beta.18.tgz"
+  resolved "https://registry.yarnpkg.com/@docusaurus/preset-classic/-/preset-classic-2.0.0-beta.18.tgz#82f6905d34a13e46289ac4d2f1125e47033bd9d8"
   integrity sha512-TfDulvFt/vLWr/Yy7O0yXgwHtJhdkZ739bTlFNwEkRMAy8ggi650e52I1I0T79s67llecb4JihgHPW+mwiVkCQ==
   dependencies:
     "@docusaurus/core" "2.0.0-beta.18"
