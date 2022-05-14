@@ -79,20 +79,3 @@ vulnerability — although such a weakness could be useful for reconnaissance
 purposes, and could be used in conjunction with a bona fide vulnerability to
 compromise files, it would not by itself enable an attacker to compromise data,
 and thus it would not constitute a security vulnerability.
-
-## 3 Key Principles
-
-> !!! note "Summary"
-> Integrity, Availability, and Confidentiality
-
-Integrity, availability, and confidentiality are the three main goals for
-security. If one or more of these three elements lacks, there is a security
-vulnerability. A single security vulnerability can compromise one or all these
-elements at the same time. For instance, an information disclosure vulnerability
-would compromise the confidentiality of a product, while a remote code execution
-vulnerability would compromise its integrity, availability, and confidentiality.
-
-## Citations
-
-[Microsoft TechNet: Security Guidance ](<https://docs.microsoft.com/en-us/previous-versions/tn-archive/cc751383(v=technet.10)#definition>)
-Accessed 2022.04.25
