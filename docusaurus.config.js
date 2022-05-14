@@ -13,7 +13,7 @@ module.exports = {
   baseUrl: '/',
   favicon: '/img/favicon.ico',
   trailingSlash: false,
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   organizationName: 'openmev',
   projectName: 'docs',
