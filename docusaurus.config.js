@@ -41,8 +41,13 @@ module.exports = {
         },
       }),
     ],
+     [
+           'docusaurus-preset-shiki-twoslash',
+           {
+             themes: ["min-light", "nord"],
+           }
+       ]
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
