@@ -1,10 +1,13 @@
 ---
-title: RPC Spec
-version: v0.6.0
+title: SecureRpc API Spec
+version: v2022.05
 ---
 
-# Flashbots Compatible RPC Spec
+# SecureRpc Ethereum API
 
+> Documentation for both SecureRpc/OpenMEV
+
+This API aims to be flashbots **compatible** and ethereum execution API **compatible**. 
 
 ## eth_sendBundle
 
