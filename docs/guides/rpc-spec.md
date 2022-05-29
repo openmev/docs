@@ -270,9 +270,20 @@ The list of error codes introduced by this specification can be found below.
 
 Each error returns a `null` `data` value, except `-32000` which returns the `data` object with a `err` member that explains the error encountered.
 
+| **Parameters** | **Description** |
+| --- | --- |
+| txs | Array[String], A list of signed transactions to execute in an atomic bundle |
+| blockNumber | String, a hex encoded block number for which this bundle is valid on |
+| minTimestamp(Optional) | Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch |
+| maxTimestamp(Optional) | Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch |
+| revertingTxHashes(Optional) | Array[String], list of tx hashes within the bundle that are allowed to revert |
+
 
 ### References 
 
-> [v0.6.0, flashbots documentation](https://raw.githubusercontent.com/flashbots/flashbots-docs/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
+- [EIP-1474](https://eips.ethereum.org/EIPS/eip-1474)
+- [Flashbots v0.6](https://github.com/flashbots/flashbots-docs/blob/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
+- [EIP 1474 Remote procedure call specification](https://eips.ethereum.org/EIPS/eip-1474)
+- [v0.6.0, flashbots documentation](https://raw.githubusercontent.com/flashbots/flashbots-docs/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
 
-> [v1.0.0-alpha.9, Ethereum Execution API](https://github.com/ethereum/execution-apis)
+- [v1.0.0-alpha.9, Ethereum Execution API](https://github.com/ethereum/execution-apis)
