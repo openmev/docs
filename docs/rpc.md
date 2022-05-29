@@ -1,21 +1,41 @@
-# Manifold Transaction and RPC Status and Responses
+---
+title: OpenMEV API
+description: OpenMEV RPC Status and Responses
+version: v2022.05
+---
+
+# OpenMEV RPC Status and Responses
 
 > This covers both SecureRPC and OpenMEV
 
 Transactions that you submit to OpenMEV won't be observable in the public mempool. We provide a flashbots-compatible status api endpoint for both end-users and integrators to use to populate / query user submissions for both transactions and bundles.
 
-- [SecureRPC Transaction and RPC Status and Responses](#securerpc-transaction-and-rpc-status-and-responses)
-  - [Potential statuses](#potential-statuses)
-  - [Privacy](#privacy)
-  - [Response Message](#response-message)
-  - [manifold_sendBundle](#manifold-sendbundle)
-  - [manifold_sendMegabundle](#manifold-sendmegabundle)
-  - [eth_sendPrivateRawTransaction](#eth-sendprivaterawtransaction)
-  - [manifold_callBundle](#manifold-callbundle)
-  - [JSON RPC Error Codes](#json-rpc-error-codes)
-  - [Authorization Error Codes](#authorization-error-codes)
-  - [Ethereum Error Codes](#ethereum-error-codes)
-    - [References](#references)
+- [OpenMEV RPC Status and Responses](#openmev-rpc-status-and-responses)
+  * [Potential statuses](#potential-statuses)
+  * [Privacy](#privacy)
+  * [Response Message](#response-message)
+  * [`manifold_sendBundle`](#-manifold-sendbundle-)
+    + [Description](#description)
+    + [Returns](#returns)
+    + [Example](#example)
+  * [`manifold_sendMegabundle`](#-manifold-sendmegabundle-)
+    + [Description](#description-1)
+    + [Returns](#returns-1)
+    + [Example](#example-1)
+      - [Response](#response)
+  * [`manifold_sendPrivateRawTransaction`](#-manifold-sendprivaterawtransaction-)
+    + [Returns](#returns-2)
+    + [Example](#example-2)
+  * [`manifold_callBundle`](#-manifold-callbundle-)
+    + [Returns](#returns-3)
+  * [Validation and Types](#validation-and-types)
+    + [`Quantity`](#-quantity-)
+    + [`Data`](#-data-)
+    + [`Block Identifier`](#-block-identifier-)
+  * [Errors](#errors)
+  * [Authorization Error Codes](#authorization-error-codes)
+  * [Ethereum Error Codes](#ethereum-error-codes)
+    + [References](#references)
 
 ## Potential statuses
 
@@ -207,9 +227,15 @@ After retrieving the block specified in the `blockNrOrHash` it takes the same `b
 
 Map<`Data`, "error|value" : `Data`> - a mapping from transaction hashes to execution results with error or output (value) for each of the transactions
 
+
+## Validation and Types
+
 Below type description can also be found in [EIP-1474](https://eips.ethereum.org/EIPS/eip-1474)
 
+
 ### `Quantity`
+
+Values of a field of `QUANTITY` type **MUST** be encoded as a hexadecimal string with a `0x` prefix and the leading 0s stripped (except for the case of encoding the value `0`) matching the regular expression `^0x(?:0|(?:[a-fA-F1-9][a-fA-F0-9]*))$`.
 
 - A `Quantity` value **MUST** be hex-encoded.
 - A `Quantity` value **MUST** be "0x"-prefixed.
@@ -217,6 +243,8 @@ Below type description can also be found in [EIP-1474](https://eips.ethereum.org
 - A `Quantity` value **MUST** express zero as "0x0".
 
 ### `Data`
+
+Values of a field of `DATA` type **MUST** be encoded as a hexadecimal string with a `0x` prefix matching the regular expression `^0x(?:[a-fA-F0-9]{2})*$`.
 
 - A `Data` value **MUST** be hex-encoded.
 - A `Data` value **MUST** be “0x”-prefixed.
@@ -234,16 +262,24 @@ Since there is no way to clearly distinguish between a `Data` parameter and a `Q
 
 If the block is not found, the callee SHOULD raise a JSON-RPC error (the recommended error code is `-32001: Resource not found`. If the tag is `blockHash` and `requireCanonical` is `true`, the callee SHOULD additionally raise a JSON-RPC error if the block is not in the canonical chain (the recommended error code is `-32000: Invalid input` and in any case should be different than the error code for the block not found case so that the caller can distinguish the cases). The block-not-found check SHOULD take precedence over the block-is-canonical check, so that if the block is not found the callee raises block-not-found rather than block-not-canonical.
 
-## JSON RPC Error Codes
 
-| Code | Possible Return message | Description |
-| --- | --- | --- |
-| 32700 | Parse error | Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text. |
-| 32600 | Invalid Request | The JSON sent is not a valid Request object. |
-| 32601 | Method not found | The method does not exist / is not available. |
-| 32602 | Invalid params | Invalid method parameter(s). |
-| 32603 | Internal error | Internal JSON-RPC error. |
-| 32000 to -32099 | `Server error`. Reserved for implementation-defined server-errors. |  |
+## Errors
+
+The list of error codes introduced by this specification can be found below.
+| Code | Message | Meaning |
+| - | - | - |
+| -32700 | Parse error | Invalid JSON was received by the server. |
+| -32600 | Invalid Request | The JSON sent is not a valid Request object. |
+| -32601 | Method not found | The method does not exist / is not available. |
+| -32602 | Invalid params | Invalid method parameter(s). | 
+| -32603 | Internal error | Internal JSON-RPC error. |
+| -32000 | Server error | Generic client error while processing request. |
+| -38001 | Unknown payload | Payload does not exist / is not available. |
+| -38002 | Invalid payload attributes | Payload attributes are invalid / inconsistent. |
+
+Each error returns a `null` `data` value, except `-32000` which returns the `data` object with a `err` member that explains the error encountered.
+
+
 
 ## Authorization Error Codes
 
@@ -272,12 +308,6 @@ They will be contained in the `data` field of the RPC error message as follows:
 | 106  | Timeout                 | Should be used when an action timedout.                                 |
 | 107  | Conflict                | Should be used when an action conflicts with another (ongoing?) action. |
 
-### References
-
-- [EIP-1474](https://eips.ethereum.org/EIPS/eip-1474)
-- [Flashbots v0.6](https://github.com/flashbots/flashbots-docs/blob/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
-- [EIP 1474 Remote procedure call specification](https://eips.ethereum.org/EIPS/eip-1474)
-
 | **Parameters** | **Description** |
 | --- | --- |
 | txs | Array[String], A list of signed transactions to execute in an atomic bundle |
@@ -285,3 +315,12 @@ They will be contained in the `data` field of the RPC error message as follows:
 | minTimestamp(Optional) | Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch |
 | maxTimestamp(Optional) | Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch |
 | revertingTxHashes(Optional) | Array[String], list of tx hashes within the bundle that are allowed to revert |
+
+### References
+
+- [EIP-1474](https://eips.ethereum.org/EIPS/eip-1474)
+- [Flashbots v0.6](https://github.com/flashbots/flashbots-docs/blob/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
+- [EIP 1474 Remote procedure call specification](https://eips.ethereum.org/EIPS/eip-1474)
+- [v0.6.0, flashbots documentation](https://raw.githubusercontent.com/flashbots/flashbots-docs/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
+
+- [v1.0.0-alpha.9, Ethereum Execution API](https://github.com/ethereum/execution-apis)
