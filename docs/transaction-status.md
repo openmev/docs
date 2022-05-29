@@ -1,4 +1,7 @@
 ---
+title: Transaction Status
+description: API Endpoint for Querying your Transaction Status
+version: v2022.05
 sidebar_position: 5
 ---
 
@@ -8,7 +11,10 @@ sidebar_position: 5
 
 Transactions that you submit to OpenMEV won't be observable in the public mempool.
 
-:::caution This documentation refers to the latest version of OpenMEV ([v2.0.0-draft](#)), which is still being drafted :::
+<!-- prettier-ignore -->
+:::caution 
+This documentation refers to the latest version of OpenMEV ([v2.0.0-draft](#)), which is still being drafted 
+:::
 
 ## Potential statuses
 
@@ -47,7 +53,7 @@ To check the status of your transactions query the OpenMEV API Endpoint. Respons
 
 ## Typescript Library
 
-```typescript
+```ts twoslash
 // @see {@link https://github.com/manifoldfinance/libsushi/blob/master/src/SushiGuard/index.ts}
 /**
  * @package OpenMevTxState
@@ -62,6 +68,28 @@ To check the status of your transactions query the OpenMEV API Endpoint. Respons
  * - ERROR -> Relay hasn't received the TX || none of the miners accepted the Tx || Tx was not mined successfully
  *
  */
+
+/**
+ * @export
+ * @interface JsonRpcError
+ */
+export interface JsonRpcError {
+  code: number;
+  message: string;
+  data?: unknown;
+}
+
+/**
+ * @export
+ * @interface JsonRpcResponse
+ * @template T
+ */
+export interface JsonRpcResponse<T> {
+  jsonrpc: '2.0';
+  id?: number | string | null;
+  result?: T;
+  error?: JsonRpcError;
+}
 
 export enum PrivateTxState {
   UNCHECKED = 'UNCHECKED',
@@ -87,3 +115,4 @@ export interface PrivateTxStatus {
   relayResponses?: RelayResponses;
 }
 ```
+

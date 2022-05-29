@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+//require.resolve('docusaurus-plugin-typedoc');
 
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
@@ -19,9 +20,21 @@ module.exports = {
   projectName: 'docs',
   plugins: [
     [
-      require.resolve('@cmfcmf/docusaurus-search-local'),
+      'docusaurus-plugin-typedoc',
       {
-        indexBlog: false,
+        entryPoints: ['./external/libsushi/src/index.ts'],
+        tsconfig: ['./external/libsushi/tsconfig.json'],
+        id: "LibSushi",
+        readme: "none",
+        out: "api/libsushi",
+        categorizeByGroup: false,
+        includeVersion: true,
+        indexTitle: "LibSushi",
+        sidebar: {
+          categoryLabel: "library",
+          readmeLabel: "library",
+          collapsed: true,
+        },
       },
     ],
   ],
