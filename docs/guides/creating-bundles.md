@@ -44,5 +44,7 @@ import { Wallet, utils } from 'ethers';
 const privateKey = '0x1234';
 const wallet = new Wallet(privateKey);
 const body = '{"jsonrpc":"2.0","method":"eth_sendBundle","params":[{see above}],"id":1}';
+//       ^?
 const signature = wallet.address + ':' + wallet.signMessage(utils.id(body));
+//       ^?
 ```
