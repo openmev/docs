@@ -30,8 +30,7 @@ curl -s -L api.txprice.com | jq .blockPrices[0].estimatedPrices[1]
 
 ## OpenAPI
 
-Returns a range of confidence intervals for gas prices needed to qualify a transaction for inclusion in the next block.
-Order of confidence intervals is subject to change.
+Returns a range of confidence intervals for gas prices needed to qualify a transaction for inclusion in the next block. Order of confidence intervals is subject to change.
 
 ##### Response
 

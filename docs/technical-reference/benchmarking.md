@@ -11,6 +11,7 @@ CommodityStream optimizes the content delivery path to users based on a number o
 CommodityStream does not recommend using ping time to rpc.securerpc.com (or any other CommodityStream service, including OpenMEV RPC Gateaway) as a measure of the actual performance of CommodityStream services for the following reasons:
 
 CommodityStream services, are not designed as ICMP network testing services
+
 - Rate limiting ICMP in general
 - ICMP ping or traceroute traffic can be discarded or delayed en-route to CommodityStream
 - The termination point of the TCP/UDP session with CommodityStream may not represent the full network path between a user and the service
@@ -27,5 +28,5 @@ This will include segments of CommodityStream’s internal network beyond where 
 Individual RPC requests or responses may have content served from a number of different parts of CommodityStream’s serving infrastructure.
 
 ### Will CommodityStream offer validator nodes in all countries and regions?
-We face certain legal limitations to providing validator nodes in some countries, Generally, if a network operator or ISP meets our policies and operates in a country where we don’t face restrictions, we can deploy validator nodes.
 
+We face certain legal limitations to providing validator nodes in some countries, Generally, if a network operator or ISP meets our policies and operates in a country where we don’t face restrictions, we can deploy validator nodes.

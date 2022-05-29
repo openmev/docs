@@ -12,7 +12,7 @@ To authenticate your request, the relay requires you sign the payload and includ
 > [This signature method originates from Flashbots](https://github.com/flashbots/flashbots-docs/blob/fceec9d5a9045d6e2cfa2e26ba63757e5997ed60/docs/flashbots-auction/searchers/advanced/rpc-endpoint.mdx#authentication)
 
 ```shell
-curl -X POST 
+curl -X POST
 -H "Content-Type: application/json" -H " \
 X-Manifold-Signature: 0x1234:0xabcd" \
 --data '{
@@ -40,10 +40,9 @@ The signature is calculated by taking the [EIP-191](https://eips.ethereum.org/EI
 Here's an example using ethers.js:
 
 ```ts twoslash
-import { Wallet, utils } from "ethers";
-const privateKey = "0x1234";
+import { Wallet, utils } from 'ethers';
+const privateKey = '0x1234';
 const wallet = new Wallet(privateKey);
-const body =
-  '{"jsonrpc":"2.0","method":"eth_sendBundle","params":[{see above}],"id":1}';
-const signature = wallet.address + ":" + wallet.signMessage(utils.id(body));
+const body = '{"jsonrpc":"2.0","method":"eth_sendBundle","params":[{see above}],"id":1}';
+const signature = wallet.address + ':' + wallet.signMessage(utils.id(body));
 ```

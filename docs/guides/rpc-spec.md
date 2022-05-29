@@ -3,7 +3,7 @@ title: RPC Spec
 version: v0.6.0
 ---
 
-# Flashbots Compatible RPC Spec 
+# Flashbots Compatible RPC Spec
 
 > [see flashbots documentation](https://raw.githubusercontent.com/flashbots/flashbots-docs/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
 
@@ -13,13 +13,13 @@ version: v0.6.0
 
 Sends a bundle of transactions to the miner. The bundle has to be executed at the beginning of the block (before any other transactions), with bundle transactions executed exactly in the same order as provided in the bundle. During the Flashbots Alpha this is only called by the Flashbots relay.
 
-| Name | Type | Description | Comment
---------|----------|-----------|-----------
-txs |	`Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded)	| a no-op in the light mode
-blockNumber	|`Quantity`	|Exact block number at which the bundle can be included.	|bundle is evicted after the block
-minTimestamp	|`Quantity`	|Minimum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable.
-maxTimestamp	|`Quantity`	|Maximum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable.
-revertingTxHashes	|Array<`Data`>	|Array of tx hashes within the bundle that are allowed to cause the EVM execution to revert without preventing the bundle inclusion in a block.
+| Name | Type | Description | Comment |
+| --- | --- | --- | --- |
+| txs | `Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded) | a no-op in the light mode |
+| blockNumber | `Quantity` | Exact block number at which the bundle can be included. | bundle is evicted after the block |
+| minTimestamp | `Quantity` | Minimum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable. |
+| maxTimestamp | `Quantity` | Maximum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable. |
+| revertingTxHashes | Array<`Data`> | Array of tx hashes within the bundle that are allowed to cause the EVM execution to revert without preventing the bundle inclusion in a block. |
 
 ### Returns
 
@@ -61,14 +61,15 @@ curl -X POST -H 'Content-Type: application/json' --data '{
 
 Sends a megabundle to the miner. The megabundle has to be executed at the beginning of the block (before any other transactions), with bundle transactions executed exactly in the same order as provided in the bundle. Can only be called by a relay listed in the `miner.trustedrelays` config.
 
-| Name | Type | Description | Comment
---------|----------|-----------|-----------
-txs |	`Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded)	| a no-op in the light mode
-blockNumber	|`Quantity`	|Exact block number at which the bundle can be included.	|bundle is evicted after the block
-minTimestamp	|`Quantity`	|Minimum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable.
-maxTimestamp	|`Quantity`	|Maximum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable.
-revertingTxHashes	|Array<`Data`>	|Array of tx hashes within the bundle that are allowed to cause the EVM execution to revert without preventing the bundle inclusion in a block.
-relaySignature	|Array<`Data`>	|An secp256k1 signature signed with an address from the `miner.trustedrelays`. Message signed is a Keccak hash of RLP serialized sequence that contains the following items: array of txs (a sequence of byte arrays representing RLP serialized txs); minTimestamp serialized as an int256, like in the devp2p specification; maxTimestamp serialized as an int256, like in the devp2p specification; revertingTxHashes serialized as an array of byte arrays.
+| Name | Type | Description | Comment |
+| --- | --- | --- | --- |
+| txs | `Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded) | a no-op in the light mode |
+| blockNumber | `Quantity` | Exact block number at which the bundle can be included. | bundle is evicted after the block |
+| minTimestamp | `Quantity` | Minimum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable. |
+| maxTimestamp | `Quantity` | Maximum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable. |
+| revertingTxHashes | Array<`Data`> | Array of tx hashes within the bundle that are allowed to cause the EVM execution to revert without preventing the bundle inclusion in a block. |
+| relaySignature | Array<`Data`> | An secp256k1 signature signed with an address from the `miner.trustedrelays`. Message signed is a Keccak hash of RLP serialized sequence that contains the following items: array of txs (a sequence of byte arrays representing RLP serialized txs); minTimestamp serialized as an int256, like in the devp2p specification; maxTimestamp serialized as an int256, like in the devp2p specification; revertingTxHashes serialized as an array of byte arrays. |
+
 ### Returns
 
 {`boolean`} - `true` if megabundle has been accepted by the node, otherwise `false`
@@ -110,8 +111,8 @@ curl -X POST -H 'Content-Type: application/json' --data '{
 
 Sends a raw transaction to be included for block construction. Transaction is marked as private which means that it will not be broadcast to any other node for as long as the configured `txpool.privatetxlifespan` in hours. Except for the no broadcast rule the transaction should be treated equally with all the public transaction pool transactions.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
+| Name  | Type          | Description                                                                 |
+| ----- | ------------- | --------------------------------------------------------------------------- |
 | input | `Array<Data>` | Signed transaction (`eth_sendRawTransaction` style, signed and RLP-encoded) |
 
 ### Returns
@@ -139,7 +140,6 @@ curl -X POST -H 'Content-Type: application/json' --data '{
 }
 ```
 
-
 ## eth_callBundle
 
 ### Description
@@ -149,11 +149,11 @@ Simulate a bundle of transactions at the top of a block.
 After retrieving the block specified in the `blockNrOrHash` it takes the same `blockhash`, `gasLimit`, `difficulty`, same `timestamp` unless the `blockTimestamp` property is specified, and increases the block number by `1`. `eth_callBundle` will timeout after `5` seconds.
 
 | Name | Type | Description |
-| ---- | ---- | ----------- |
+| --- | --- | --- |
 | txs | `Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded) |
-| blockNumber	| `Quantity` | A hex encoded block number for which this bundle is valid on |
-| stateBlockNumber | `Quantity\|string\|Block Identifier` | Either a hex encoded number or a {Block Identifier} for which state to base this simulation on.
-| timestamp	|`Quantity`	|Block timestamp to be used in replacement of the timestamp taken from the parent block. |
+| blockNumber | `Quantity` | A hex encoded block number for which this bundle is valid on |
+| stateBlockNumber | `Quantity\|string\|Block Identifier` | Either a hex encoded number or a {Block Identifier} for which state to base this simulation on. |
+| timestamp | `Quantity` | Block timestamp to be used in replacement of the timestamp taken from the parent block. |
 
 ### Returns
 
@@ -241,10 +241,9 @@ Below type description can also be found in [EIP-1474](https://eips.ethereum.org
 Since there is no way to clearly distinguish between a `Data` parameter and a `Quantity` parameter, [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) provides a format to specify a block either using the block hash or block number. The block identifier is a JSON `object` with the following fields:
 
 | Position | Name | Type | Description |
-| -------- | ---- | ---- | ------------|
-| 0A	|blockNumber	|`Quantity`	|The block in the canonical chain with this number |
-| 0B	|blockHash	|`Data`	| The block uniquely identified by this hash. The blockNumber and blockHash properties are mutually exclusive; exactly one of them must be set. |
-| 1B	|requireCanonical	|`boolean`	| (optional) Whether or not to throw an error if the block is not in the canonical chain as described below. Only allowed in conjunction with the blockHash tag. Defaults to false. |
-
+| --- | --- | --- | --- |
+| 0A | blockNumber | `Quantity` | The block in the canonical chain with this number |
+| 0B | blockHash | `Data` | The block uniquely identified by this hash. The blockNumber and blockHash properties are mutually exclusive; exactly one of them must be set. |
+| 1B | requireCanonical | `boolean` | (optional) Whether or not to throw an error if the block is not in the canonical chain as described below. Only allowed in conjunction with the blockHash tag. Defaults to false. |
 
 If the block is not found, the callee SHOULD raise a JSON-RPC error (the recommended error code is `-32001: Resource not found`. If the tag is `blockHash` and `requireCanonical` is `true`, the callee SHOULD additionally raise a JSON-RPC error if the block is not in the canonical chain (the recommended error code is `-32000: Invalid input` and in any case should be different than the error code for the block not found case so that the caller can distinguish the cases). The block-not-found check SHOULD take precedence over the block-is-canonical check, so that if the block is not found the callee raises block-not-found rather than block-not-canonical.

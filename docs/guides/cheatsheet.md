@@ -44,9 +44,11 @@ block.coinbase.transfer(AMOUNT_TO_TRANSFER)
 ```
 
 Edge case to deal with sending to a miner contract
+
 ```solidity
 block.coinbase.call{value: _ethAmountToCoinbase}(new bytes(0));
 ```
+
 subject to [reentrancy attacks](https://medium.com/coinmonks/protect-your-solidity-smart-contracts-from-reentrancy-attacks-9972c3af7c21)
 
 ## Bundle pricing
@@ -64,8 +66,8 @@ https://docs.flashbots.net/flashbots-auction/miners/mev-geth-spec/v04
 Bundles must have a target `blockNumber` and a `priorityFeePerGas` >= 1 Gwei.
 
 ## Reverting txs
-https://docs.flashbots.net/flashbots-auction/miners/mev-geth-spec/v04
 
+https://docs.flashbots.net/flashbots-auction/miners/mev-geth-spec/v04
 
 "When constructing a block the node should reject any bundle or megabundle that has a reverting transaction unless its hash is included in the RevertingTxHashes list of the bundle"
 
@@ -77,30 +79,36 @@ https://docs-staging.flashbots.net/flashbots-auction/searchers/advanced/troubles
 2. Incentives (gas price/coinbase transfers) not high enough to offset value of block space
 
 Simulate bundle:
+
 ```ts
-  const signedTransactions = await flashbotsProvider.signBundle(transactionBundle)
-  const simulation = await flashbotsProvider.simulate(signedTransactions, targetBlockNumber, targetBlockNumber + 1)
-  console.log(JSON.stringify(simulation, null, 2))
+const signedTransactions = await flashbotsProvider.signBundle(transactionBundle);
+const simulation = await flashbotsProvider.simulate(signedTransactions, targetBlockNumber, targetBlockNumber + 1);
+console.log(JSON.stringify(simulation, null, 2));
 ```
 
 3. Competitors paying more
 
 Get conflicting bundles for a prior block:
+
 ```ts
-const signedTransactions = await flashbotsProvider.signBundle(transactionBundle)
-console.log(await flashbotsProvider.getConflictingBundle(
-      signedTransactions,
-      13140328 // blockNumber
-  ))
+const signedTransactions = await flashbotsProvider.signBundle(transactionBundle);
+console.log(
+  await flashbotsProvider.getConflictingBundle(
+    signedTransactions,
+    13140328, // blockNumber
+  ),
+);
 ```
 
 4. Bundle received too late to appear in target block
 
 Get submission time data and compare to block time:
+
 ```ts
 console.log(
-  await flashbotsProvider.getBundleStats("0x123456789abcdef123456789abcdef123456789abcdef123456789abcdef1234", 13509887)
-  )
-
+  await flashbotsProvider.getBundleStats(
+    '0x123456789abcdef123456789abcdef123456789abcdef123456789abcdef1234',
+    13509887,
+  ),
+);
 ```
-

@@ -2,40 +2,38 @@
 
 > This covers both SecureRPC and OpenMEV
 
-Transactions that you submit to OpenMEV won't be observable in the public mempool. 
-We provide a flashbots-compatible status api endpoint for both end-users and integrators to use to 
-populate / query user submissions for both transactions and bundles.
+Transactions that you submit to OpenMEV won't be observable in the public mempool. We provide a flashbots-compatible status api endpoint for both end-users and integrators to use to populate / query user submissions for both transactions and bundles.
 
 - [SecureRPC Transaction and RPC Status and Responses](#securerpc-transaction-and-rpc-status-and-responses)
-  * [Potential statuses](#potential-statuses)
-  * [Privacy](#privacy)
-  * [Response Message](#response-message)
-  * [manifold_sendBundle](#manifold-sendbundle)
-  * [manifold_sendMegabundle](#manifold-sendmegabundle)
-  * [eth_sendPrivateRawTransaction](#eth-sendprivaterawtransaction)
-  * [manifold_callBundle](#manifold-callbundle)
-  * [JSON RPC Error Codes](#json-rpc-error-codes)
-  * [Authorization Error Codes](#authorization-error-codes)
-  * [Ethereum Error Codes](#ethereum-error-codes)
-    + [References](#references)
+  - [Potential statuses](#potential-statuses)
+  - [Privacy](#privacy)
+  - [Response Message](#response-message)
+  - [manifold_sendBundle](#manifold-sendbundle)
+  - [manifold_sendMegabundle](#manifold-sendmegabundle)
+  - [eth_sendPrivateRawTransaction](#eth-sendprivaterawtransaction)
+  - [manifold_callBundle](#manifold-callbundle)
+  - [JSON RPC Error Codes](#json-rpc-error-codes)
+  - [Authorization Error Codes](#authorization-error-codes)
+  - [Ethereum Error Codes](#ethereum-error-codes)
+    - [References](#references)
 
 ## Potential statuses
 
-| **Code**  	| **Status Description**                                                           	|
-|-----------	|----------------------------------------------------------------------------------	|
-| PENDING   	| - The transaction was received and is currently being submitted to miners        	|
-| INCLUDED  	| - The transaction was included on-chain                                          	|
-| FAILED    	| - The transaction was submitted for 25 blocks and failed to be included on-chain 	|
-| CANCELLED 	| - The transaction was cancelled by the user and not included on-chain            	|
-| UNKNOWN   	| - The transaction was not received                                               	|
+| **Code**  | **Status Description**                                                           |
+| --------- | -------------------------------------------------------------------------------- |
+| PENDING   | - The transaction was received and is currently being submitted to miners        |
+| INCLUDED  | - The transaction was included on-chain                                          |
+| FAILED    | - The transaction was submitted for 25 blocks and failed to be included on-chain |
+| CANCELLED | - The transaction was cancelled by the user and not included on-chain            |
+| UNKNOWN   | - The transaction was not received                                               |
 
 ## Privacy
 
 In order to receive a response from the status API you must provide a valid transaction hash to look up.
 
-## Response Message 
+## Response Message
 
-OpenMEV Status API is FlashBots compatible, meaning it covers at least version 0.6+ of the Flashbots API Specification.  
+OpenMEV Status API is FlashBots compatible, meaning it covers at least version 0.6+ of the Flashbots API Specification.
 
 To check the status of your transactions query either SecureRPC or the OpenMEV API Endpoint. Response messages are formatted as follows:
 
@@ -43,35 +41,34 @@ To check the status of your transactions query either SecureRPC or the OpenMEV A
 
 ```json
 {
-    "status": "PENDING",
-    "hash": "YOUR_TX_HASH",
-    "maxBlockNumber": "latest",
-    "transaction": {
-        "from": "<SENDER>",
-        "to": "<RECEIVER>",
-        "gasLimit": "23000",
-        "maxFeePerGas": "300",
-        "maxPriorityFeePerGas": "10",
-        "nonce": "42",
-        "value": "1333333333337",
-    }
+  "status": "PENDING",
+  "hash": "YOUR_TX_HASH",
+  "maxBlockNumber": "latest",
+  "transaction": {
+    "from": "<SENDER>",
+    "to": "<RECEIVER>",
+    "gasLimit": "23000",
+    "maxFeePerGas": "300",
+    "maxPriorityFeePerGas": "10",
+    "nonce": "42",
+    "value": "1333333333337"
+  }
 }
 ```
-
 
 ## `manifold_sendBundle`
 
 ### Description
 
-Sends a bundle of transactions to the miner. The bundle has to be executed at the beginning of the block (before any other transactions), with bundle transactions executed exactly in the same order as provided in the bundle. 
+Sends a bundle of transactions to the miner. The bundle has to be executed at the beginning of the block (before any other transactions), with bundle transactions executed exactly in the same order as provided in the bundle.
 
-| **Name** | **Type** | **Description** | **Comment**
---------|----------|-----------|-----------
-`txs` |	`Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded)	| a no-op in the light mode
-`blockNumber`	|`Quantity`	|Exact block number at which the bundle can be included.	|bundle is evicted after the block
-`minTimestamp`	|`Quantity`	|Minimum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable.
-`maxTimestamp`	|`Quantity`	|Maximum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable.
-`revertingTxHashes`	|Array<`Data`>	|Array of tx hashes within the bundle that are allowed to cause the EVM execution to revert without preventing the bundle inclusion in a block.
+| **Name** | **Type** | **Description** | **Comment** |
+| --- | --- | --- | --- |
+| `txs` | `Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded) | a no-op in the light mode |
+| `blockNumber` | `Quantity` | Exact block number at which the bundle can be included. | bundle is evicted after the block |
+| `minTimestamp` | `Quantity` | Minimum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable. |
+| `maxTimestamp` | `Quantity` | Maximum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable. |
+| `revertingTxHashes` | Array<`Data`> | Array of tx hashes within the bundle that are allowed to cause the EVM execution to revert without preventing the bundle inclusion in a block. |
 
 ### Returns
 
@@ -113,14 +110,14 @@ curl -X POST -H 'Content-Type: application/json' --data '{
 
 Sends a megabundle to the miner. The megabundle has to be executed at the beginning of the block (before any other transactions), with bundle transactions executed exactly in the same order as provided in the bundle. Can only be called by a relay listed in the `miner.trustedrelays` config.
 
-| **Name** | **Type** | **Description** | **Comment**
---------|----------|-----------|-----------
-`txs` |	`Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded)	| a no-op in the light mode
-`blockNumber`	|`Quantity`	|Exact block number at which the bundle can be included.	|bundle is evicted after the block
-`minTimestamp`	|`Quantity`	|Minimum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable.
-`maxTimestamp`	|`Quantity`	|Maximum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable.
-`revertingTxHashes`	|Array<`Data`>	|Array of tx hashes within the bundle that are allowed to cause the EVM execution to revert without preventing the bundle inclusion in a block.
-`relaySignature`	|Array<`Data`>	|An secp256k1 signature signed with an address from the `miner.trustedrelays`. Message signed is a Keccak hash of RLP serialized sequence that contains the following items: array of txs (a sequence of byte arrays representing RLP serialized txs); `minTimestamp` serialized as an int256, like in the devp2p specification; `maxTimestamp` serialized as an int256, like in the devp2p specification; `revertingTxHashes` serialized as an array of byte arrays.
+| **Name** | **Type** | **Description** | **Comment** |
+| --- | --- | --- | --- |
+| `txs` | `Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded) | a no-op in the light mode |
+| `blockNumber` | `Quantity` | Exact block number at which the bundle can be included. | bundle is evicted after the block |
+| `minTimestamp` | `Quantity` | Minimum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable. |
+| `maxTimestamp` | `Quantity` | Maximum (inclusive) block timestamp at which the bundle can be included. If this value is 0 then any timestamp is acceptable. |
+| `revertingTxHashes` | Array<`Data`> | Array of tx hashes within the bundle that are allowed to cause the EVM execution to revert without preventing the bundle inclusion in a block. |
+| `relaySignature` | Array<`Data`> | An secp256k1 signature signed with an address from the `miner.trustedrelays`. Message signed is a Keccak hash of RLP serialized sequence that contains the following items: array of txs (a sequence of byte arrays representing RLP serialized txs); `minTimestamp` serialized as an int256, like in the devp2p specification; `maxTimestamp` serialized as an int256, like in the devp2p specification; `revertingTxHashes` serialized as an array of byte arrays. |
 
 ### Returns
 
@@ -154,9 +151,9 @@ curl -X POST -H 'Content-Type: application/json' --data '{
 
 ```json
 {
-    "id": 1337,
-    "jsonrpc": "2.0",
-    "result": true
+  "id": 1337,
+  "jsonrpc": "2.0",
+  "result": true
 }
 ```
 
@@ -164,9 +161,9 @@ curl -X POST -H 'Content-Type: application/json' --data '{
 
 Sends a raw transaction to be included for block construction. Transaction is marked as private which means that it will not be broadcast to any other node for as long as the configured `txpool.privatetxlifespan` in hours. Except for the no broadcast rule the transaction should be treated equally with all the public transaction pool transactions.
 
-| **Name** | **Type** | **Description** |
-| ---- | ---- | ----------- |
-| `input` | `Array<Data>` | Signed transaction (`eth_sendRawTransaction` style, signed and RLP-encoded) |
+| **Name** | **Type**      | **Description**                                                             |
+| -------- | ------------- | --------------------------------------------------------------------------- |
+| `input`  | `Array<Data>` | Signed transaction (`eth_sendRawTransaction` style, signed and RLP-encoded) |
 
 ### Returns
 
@@ -193,7 +190,6 @@ curl -X POST -H 'Content-Type: application/json' --data '{
 }
 ```
 
-
 ## `manifold_callBundle`
 
 Simulate a bundle of transactions at the top of a block.
@@ -201,11 +197,11 @@ Simulate a bundle of transactions at the top of a block.
 After retrieving the block specified in the `blockNrOrHash` it takes the same `blockhash`, `gasLimit`, `difficulty`, same `timestamp` unless the `blockTimestamp` property is specified, and increases the block number by `1`. `manifold_callBundle` will timeout after `5` seconds.
 
 | **Name** | **Type** | **Description** |
-| ---- | ---- | ----------- |
+| --- | --- | --- |
 | `txs` | `Array<Data>` | Array of signed transactions (`eth_sendRawTransaction` style, signed and RLP-encoded) |
-| `blockNumber`	| `Quantity` | A hex encoded block number for which this bundle is valid on |
-| `stateBlockNumber` | `Quantity\|string\|Block Identifier` | Either a hex encoded number or a {Block Identifier} for which state to base this simulation on.
-| `timestamp`	|`Quantity`	|Block timestamp to be used in replacement of the timestamp taken from the parent block. |
+| `blockNumber` | `Quantity` | A hex encoded block number for which this bundle is valid on |
+| `stateBlockNumber` | `Quantity\|string\|Block Identifier` | Either a hex encoded number or a {Block Identifier} for which state to base this simulation on. |
+| `timestamp` | `Quantity` | Block timestamp to be used in replacement of the timestamp taken from the parent block. |
 
 ### Returns
 
@@ -231,14 +227,12 @@ Below type description can also be found in [EIP-1474](https://eips.ethereum.org
 Since there is no way to clearly distinguish between a `Data` parameter and a `Quantity` parameter, [EIP-1898](https://eips.ethereum.org/EIPS/eip-1898) provides a format to specify a block either using the block hash or block number. The block identifier is a JSON `object` with the following fields:
 
 | **Position** | **Name** | **Type** | **Description** |
-| -------- | ---- | ---- | ------------|
-| `0A`	| `blockNumber`	|`Quantity`	|The block in the canonical chain with this number |
-| `0B`	| `blockHash`	|`Data`	| The block uniquely identified by this hash. The blockNumber and blockHash properties are mutually exclusive; exactly one of them must be set. |
-| `1B`	| `requireCanonical`	|`boolean`	| (optional) Whether to throw an error if the block is not in the canonical chain as described below. Only allowed in conjunction with the blockHash tag. Defaults to false. |
-
+| --- | --- | --- | --- |
+| `0A` | `blockNumber` | `Quantity` | The block in the canonical chain with this number |
+| `0B` | `blockHash` | `Data` | The block uniquely identified by this hash. The blockNumber and blockHash properties are mutually exclusive; exactly one of them must be set. |
+| `1B` | `requireCanonical` | `boolean` | (optional) Whether to throw an error if the block is not in the canonical chain as described below. Only allowed in conjunction with the blockHash tag. Defaults to false. |
 
 If the block is not found, the callee SHOULD raise a JSON-RPC error (the recommended error code is `-32001: Resource not found`. If the tag is `blockHash` and `requireCanonical` is `true`, the callee SHOULD additionally raise a JSON-RPC error if the block is not in the canonical chain (the recommended error code is `-32000: Invalid input` and in any case should be different than the error code for the block not found case so that the caller can distinguish the cases). The block-not-found check SHOULD take precedence over the block-is-canonical check, so that if the block is not found the callee raises block-not-found rather than block-not-canonical.
-
 
 ## JSON RPC Error Codes
 
@@ -259,7 +253,6 @@ If the block is not found, the callee SHOULD raise a JSON-RPC error (the recomme
 | 2 | Action not allowed | Should be used when some action is not allowed, e.g. preventing an action, while another depending action is processing on, like sending again when a confirmation popup is shown to the user (?). |
 | 3 | Execution error | Will contain a subset of custom errors in the data field. See below. |
 
-
 ## Ethereum Error Codes
 
 Custom error `3` can contain custom error(s) to further explain what went wrong.  
@@ -267,18 +260,17 @@ They will be contained in the `data` field of the RPC error message as follows:
 
 | Code | Possible Return message | Description |
 | --- | --- | --- |
-| 100 | X doesn’t exist | Should be used when something which should be there is not found. (Doesn’t apply to eth\_getTransactionBy\_ and eth\_getBlock\_. They return a success with value `null`) |
+| 100 | X doesn’t exist | Should be used when something which should be there is not found. (Doesn’t apply to eth_getTransactionBy\_ and eth_getBlock\_. They return a success with value `null`) |
 | 101 | Requires ether | Should be used for actions which require somethin else, e.g. gas or a value. |
 | 102 | Gas too low | Should be used when a to low value of gas was given. |
 | 103 | Gas limit exceeded | Should be used when a limit is exceeded, e.g. for the gas limit in a block. |
 | 104 | Rejected | Should be used when an action was rejected, e.g. because of its content (too long contract code, containing wrong characters ?, should differ from `-32602` - Invalid params). |
 | 105 | Ether too low | Should be used when a to low value of Ether was given. |
 
-| Code | Possible Return message | Description |
-| --- | --- | --- |
-| 106 | Timeout | Should be used when an action timedout. |
-| 107 | Conflict | Should be used when an action conflicts with another (ongoing?) action. |
-
+| Code | Possible Return message | Description                                                             |
+| ---- | ----------------------- | ----------------------------------------------------------------------- |
+| 106  | Timeout                 | Should be used when an action timedout.                                 |
+| 107  | Conflict                | Should be used when an action conflicts with another (ongoing?) action. |
 
 ### References
 
@@ -286,11 +278,10 @@ They will be contained in the `data` field of the RPC error message as follows:
 - [Flashbots v0.6](https://github.com/flashbots/flashbots-docs/blob/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
 - [EIP 1474 Remote procedure call specification](https://eips.ethereum.org/EIPS/eip-1474)
 
-| **Parameters**              	| **Description**                                                                               	|
-|-----------------------------	|-----------------------------------------------------------------------------------------------	|
-| txs                         	| Array[String], A list of signed transactions to execute in an atomic bundle                   	|
-| blockNumber                 	| String, a hex encoded block number for which this bundle is valid on                          	|
-| minTimestamp(Optional)      	| Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch 	|
-| maxTimestamp(Optional)      	| Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch 	|
-| revertingTxHashes(Optional) 	| Array[String], list of tx hashes within the bundle that are allowed to revert                 	|
-
+| **Parameters** | **Description** |
+| --- | --- |
+| txs | Array[String], A list of signed transactions to execute in an atomic bundle |
+| blockNumber | String, a hex encoded block number for which this bundle is valid on |
+| minTimestamp(Optional) | Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch |
+| maxTimestamp(Optional) | Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch |
+| revertingTxHashes(Optional) | Array[String], list of tx hashes within the bundle that are allowed to revert |

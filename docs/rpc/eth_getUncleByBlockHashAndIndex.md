@@ -1,7 +1,7 @@
 ---
 title: eth_getUncleByBlockHashAndIndex
 version: 2022.04
-tags: ["json rpc", "gateway", "api"]
+tags: ['json rpc', 'gateway', 'api']
 ---
 
 #### eth_getUncleByBlockHashAndIndex
@@ -12,10 +12,10 @@ Returns information about an uncle specified by block hash and uncle index posit
 
 ##### Parameters
 
-|#|Type|Description|
-|-|-|-|
-|1|{[`Data`](#data)}|hash of a block|
-|2|{[`Quantity`](#quantity)}|index of uncle|
+| #   | Type                      | Description     |
+| --- | ------------------------- | --------------- |
+| 1   | {[`Data`](#data)}         | hash of a block |
+| 2   | {[`Quantity`](#quantity)} | index of uncle  |
 
 ##### Returns
 
@@ -76,4 +76,3 @@ curl -X POST --data '{
     }
 }
 ```
-
