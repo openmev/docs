@@ -8,8 +8,7 @@ sidebar_position: 5
 
 Transactions that you submit to OpenMEV won't be observable in the public mempool.
 
-:::caution This documentation refers to the latest version of OpenMEV ([v2.0.0-draft](#)), which is still being drafted
-:::
+:::caution This documentation refers to the latest version of OpenMEV ([v2.0.0-draft](#)), which is still being drafted :::
 
 ## Potential statuses
 

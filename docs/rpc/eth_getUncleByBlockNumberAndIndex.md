@@ -1,7 +1,7 @@
 ---
 title: eth_getUncleByBlockNumberAndIndex
 version: 2022.04
-tags: ["json rpc", "gateway", "api"]
+tags: ['json rpc', 'gateway', 'api']
 ---
 
 #### eth_getUncleByBlockNumberAndIndex
@@ -12,10 +12,10 @@ Returns information about an uncle specified by block number and uncle index pos
 
 ##### Parameters
 
-|#|Type|Description|
-|-|-|-|
-|1|{[`Quantity`](#quantity)\|`string`}|block number, or one of `"latest"`, `"earliest"` or `"pending"`|
-|2|{[`Quantity`](#quantity)}|index of uncle|
+| #   | Type                                | Description                                                     |
+| --- | ----------------------------------- | --------------------------------------------------------------- |
+| 1   | {[`Quantity`](#quantity)\|`string`} | block number, or one of `"latest"`, `"earliest"` or `"pending"` |
+| 2   | {[`Quantity`](#quantity)}           | index of uncle                                                  |
 
 ##### Returns
 

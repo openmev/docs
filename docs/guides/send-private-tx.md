@@ -2,14 +2,11 @@
 
 How to send a single transaction using SecureRPC
 
-If you want to send a single transaction privately, without sending it as a bundle, you can use the
-`eth_sendPrivateTransaction` method.
+If you want to send a single transaction privately, without sending it as a bundle, you can use the `eth_sendPrivateTransaction` method.
 
-This method attempts to send your transaction to miners on every block for a maximum of 25 blocks. No need to listen for
-the next block and re-send yourself.
+This method attempts to send your transaction to miners on every block for a maximum of 25 blocks. No need to listen for the next block and re-send yourself.
 
-Private transactions can be cancelled with the `eth_cancelPrivateTransaction` method. Once a transaction is submitted
-from the relay to a miner we cannot "recall" it. However, we can cancel submitting transactions for future blocks.
+Private transactions can be cancelled with the `eth_cancelPrivateTransaction` method. Once a transaction is submitted from the relay to a miner we cannot "recall" it. However, we can cancel submitting transactions for future blocks.
 
 See RPC endpoint for JSON-RPC definitions of the methods.
 
@@ -49,10 +46,7 @@ if (waitRes === FlashbotsTransactionResolution.TransactionIncluded) {
 
 ## Sending a Private Transaction
 
-To send a _single_ transaction without having to send it as a bundle, use the `sendPrivateTransaction` function. This
-method allows us to process transactions faster and more efficiently than regular bundles. When you send a transaction
-using this method, we will try to send it to miners over the next 25 blocks (up to, but not past the target block
-number).
+To send a _single_ transaction without having to send it as a bundle, use the `sendPrivateTransaction` function. This method allows us to process transactions faster and more efficiently than regular bundles. When you send a transaction using this method, we will try to send it to miners over the next 25 blocks (up to, but not past the target block number).
 
 ```js
 const tx = {

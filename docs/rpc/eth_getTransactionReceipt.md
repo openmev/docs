@@ -1,7 +1,7 @@
 ---
 title: eth_getTransactionReceipt
 version: 2022.04
-tags: ["json rpc", "gateway", "api"]
+tags: ['json rpc', 'gateway', 'api']
 ---
 
 #### eth_getTransactionReceipt
@@ -14,9 +14,9 @@ Returns the receipt of a transaction specified by hash
 
 ##### Parameters
 
-|#|Type|Description|
-|-|-|-|
-|1|{[`Data`](#data)}|hash of a transaction|
+| #   | Type              | Description           |
+| --- | ----------------- | --------------------- |
+| 1   | {[`Data`](#data)} | hash of a transaction |
 
 ##### Returns
 

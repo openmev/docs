@@ -9,8 +9,7 @@ title: Transaction Rebating
 
 ## List of Transactions by Contract Function
 
-_Note_: Function calls listed at 0 are not eligible at this time, however we fully plan on expanding coverage to
-additional functions in the future
+_Note_: Function calls listed at 0 are not eligible at this time, however we fully plan on expanding coverage to additional functions in the future
 
 |                    **$function_calls**                    | **%eligible** |
 | :-------------------------------------------------------: | :-----------: |
@@ -40,8 +39,7 @@ additional functions in the future
 
 ### Transaction Pricing
 
-For more detailed document detailing the v2 api,
-[see this specification document](https://hackmd.io/@sbacha/price-network-outage)
+For more detailed document detailing the v2 api, [see this specification document](https://hackmd.io/@sbacha/price-network-outage)
 
 **maxPrice** Highest priced transaction in the mempool
 
@@ -51,23 +49,16 @@ For more detailed document detailing the v2 api,
 
 **blockNumber** Block this prediction is for
 
-**baseFeePerGas** Base fee per gas for current block in gwei. (Only type2 transactions Post EIP-1559 have this value and
-it's burned by the network upon transaction success). estimatedTransactionCount Number of items we estimate will be
-included in next block based on mempool snapshot
+**baseFeePerGas** Base fee per gas for current block in gwei. (Only type2 transactions Post EIP-1559 have this value and it's burned by the network upon transaction success). estimatedTransactionCount Number of items we estimate will be included in next block based on mempool snapshot
 
 **confidence** 0-99 likelihood the next block will contain a transaction with a gas price >= to the listed price
 
 **Price** Price in Gwei (used for type0 transactions: Pre EIP-1559)
 
-**maxPriorityFeePerGas** Max priority fee per gas in gwei also known as the "tip" (used for type2 transactions:
-EIP-1559)
+**maxPriorityFeePerGas** Max priority fee per gas in gwei also known as the "tip" (used for type2 transactions: EIP-1559)
 
-**maxFeePerGas** Max fee per gas in gwei (used for type2 transactions: EIP-1559). Our current max fee heuristic is Base
-Fee \* 2 + Priority Fee. This is to protect against a 'rapid' rise in the base fee while your transaction fee is
-pending. In most cases, the actual transaction fee will approximate Base Fee + Priority Fee.
+**maxFeePerGas** Max fee per gas in gwei (used for type2 transactions: EIP-1559). Our current max fee heuristic is Base Fee \* 2 + Priority Fee. This is to protect against a 'rapid' rise in the base fee while your transaction fee is pending. In most cases, the actual transaction fee will approximate Base Fee + Priority Fee.
 
-**networkCongestion** A normalized number that can be used to gauge the congestion level of the network, with 0 meaning
-not congested and 1 meaning extremely congested
+**networkCongestion** A normalized number that can be used to gauge the congestion level of the network, with 0 meaning not congested and 1 meaning extremely congested
 
-**networkOutage** networkOutage - A true/false indicating a recognized network outage event. True means we are currently
-experiencing a network outage
+**networkOutage** networkOutage - A true/false indicating a recognized network outage event. True means we are currently experiencing a network outage
