@@ -5,7 +5,6 @@ version: v0.6.0
 
 # Flashbots Compatible RPC Spec
 
-> [see flashbots documentation](https://raw.githubusercontent.com/flashbots/flashbots-docs/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
 
 ## eth_sendBundle
 
@@ -218,12 +217,13 @@ curl -X POST -H 'Content-Type: application/json' --data '{
   }
 }
 ```
-
----
+## Validation and Types
 
 Below type description can also be found in [EIP-1474](https://eips.ethereum.org/EIPS/eip-1474)
 
 ### `Quantity`
+
+Values of a field of `QUANTITY` type **MUST** be encoded as a hexadecimal string with a `0x` prefix and the leading 0s stripped (except for the case of encoding the value `0`) matching the regular expression `^0x(?:0|(?:[a-fA-F1-9][a-fA-F0-9]*))$`.
 
 - A `Quantity` value **MUST** be hex-encoded.
 - A `Quantity` value **MUST** be "0x"-prefixed.
@@ -231,6 +231,8 @@ Below type description can also be found in [EIP-1474](https://eips.ethereum.org
 - A `Quantity` value **MUST** express zero as "0x0".
 
 ### `Data`
+
+Values of a field of `DATA` type **MUST** be encoded as a hexadecimal string with a `0x` prefix matching the regular expression `^0x(?:[a-fA-F0-9]{2})*$`.
 
 - A `Data` value **MUST** be hex-encoded.
 - A `Data` value **MUST** be “0x”-prefixed.
@@ -247,3 +249,27 @@ Since there is no way to clearly distinguish between a `Data` parameter and a `Q
 | 1B | requireCanonical | `boolean` | (optional) Whether or not to throw an error if the block is not in the canonical chain as described below. Only allowed in conjunction with the blockHash tag. Defaults to false. |
 
 If the block is not found, the callee SHOULD raise a JSON-RPC error (the recommended error code is `-32001: Resource not found`. If the tag is `blockHash` and `requireCanonical` is `true`, the callee SHOULD additionally raise a JSON-RPC error if the block is not in the canonical chain (the recommended error code is `-32000: Invalid input` and in any case should be different than the error code for the block not found case so that the caller can distinguish the cases). The block-not-found check SHOULD take precedence over the block-is-canonical check, so that if the block is not found the callee raises block-not-found rather than block-not-canonical.
+
+
+## Errors
+
+The list of error codes introduced by this specification can be found below.
+| Code | Message | Meaning |
+| - | - | - |
+| -32700 | Parse error | Invalid JSON was received by the server. |
+| -32600 | Invalid Request | The JSON sent is not a valid Request object. |
+| -32601 | Method not found | The method does not exist / is not available. |
+| -32602 | Invalid params | Invalid method parameter(s). | 
+| -32603 | Internal error | Internal JSON-RPC error. |
+| -32000 | Server error | Generic client error while processing request. |
+| -38001 | Unknown payload | Payload does not exist / is not available. |
+| -38002 | Invalid payload attributes | Payload attributes are invalid / inconsistent. |
+
+Each error returns a `null` `data` value, except `-32000` which returns the `data` object with a `err` member that explains the error encountered.
+
+
+### References 
+
+> [v0.6.0, flashbots documentation](https://raw.githubusercontent.com/flashbots/flashbots-docs/main/docs/flashbots-auction/miners/mev-geth-spec/v06-rpc.mdx)
+
+> [v1.0.0-alpha.9, Ethereum Execution API](https://github.com/ethereum/execution-apis)
