@@ -1,14 +1,20 @@
 ---
+title: Minimal API Guide
+version: v2022.05
 sidebar_position: 5
 ---
 
-# SecureRPC and OpenMEV RPC Gateway
+# Minimal API Guide
 
 > Supported RPC and API Endpoints for SecureRPC and OpenMEV
 
-OpenMEV provides HTTP endpoints to interact with the reputation service and HTTP/WS endpoints to access onchain data with a subgraph.
+OpenMEV provides HTTP endpoints to interact with the reputation service and HTTP/WS endpoints.
 
-:::tip If you want to use the OpenMEV APIs with a JavaScript library you can also use the npm package [`libmev`](https://github.com/manifoldfinance/libmev). :::
+This is a Quick Start like guide, please see the official reference API specification for a full rundown.
+
+:::tip 
+If you want to use the OpenMEV APIs with a JavaScript library you can also use the npm package [`libmev`](https://github.com/manifoldfinance/libmev). 
+:::
 
 ## Block parameters:
 
