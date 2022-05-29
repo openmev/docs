@@ -69,6 +69,28 @@ To check the status of your transactions query the OpenMEV API Endpoint. Respons
  *
  */
 
+/**
+ * @export
+ * @interface JsonRpcError
+ */
+export interface JsonRpcError {
+  code: number;
+  message: string;
+  data?: unknown;
+}
+
+/**
+ * @export
+ * @interface JsonRpcResponse
+ * @template T
+ */
+export interface JsonRpcResponse<T> {
+  jsonrpc: '2.0';
+  id?: number | string | null;
+  result?: T;
+  error?: JsonRpcError;
+}
+
 export enum PrivateTxState {
   UNCHECKED = 'UNCHECKED',
   PROCESSING = 'PROCESSING',
