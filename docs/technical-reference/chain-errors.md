@@ -39,3 +39,14 @@ ChainSegment(blocks=(next_block,), is_reorg=False).
 ```
 
 In the case that a reorg has been encountered it would trace backwards up the parent_hash links until it encounters a previously known block. The exfiltrator would transmit ChainSegment(blocks=new_chain_segment, is_reorg=True). We can bound re-org detection to a fixed maximum size window and error out if tracing backwards up the chain exceeds this limit.
+
+## Block Tags
+
+| Block Tags |  Description  |
+|---|---|
+| earliest |  The lowest numbered block the client has available  |
+| finalized |  The most recent crypto-economically secure block  cannot be re-orged outside of manual intervention driven by community coordination |
+| safe |  The most recent block that is safe from re-orgs under honest majority and certain synchronicity assumptions  |
+| unsafe |  The most recent block in the canonical chain observed by the client this block can be re-orged out of the canonical chain |
+| pending |  A sample next block built by the client on top of unsafe and containing the set of transactions usually taken from local mempool  |
+| latest |  DEPRECATED Currently an alias for unsafe will be removed at some point in the future |
