@@ -266,6 +266,7 @@ If the block is not found, the callee SHOULD raise a JSON-RPC error (the recomme
 ## Errors
 
 The list of error codes introduced by this specification can be found below.
+
 | Code | Message | Meaning |
 | - | - | - |
 | -32700 | Parse error | Invalid JSON was received by the server. |
