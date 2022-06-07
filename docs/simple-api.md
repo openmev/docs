@@ -181,7 +181,9 @@ axios(config)
 
 ### OpenMEV Transaction
 
-Same signature as `eth_sendRawTransaction` but the tx is eligible for arb and goes into our OpenMEV workflow (e.g. gas rebate). Anything received via `eth_sendRawTransaction` just gets relayed
+Same signature as `eth_sendRawTransaction` but the tx is eligible for arb and goes into our OpenMEV workflow (e.g. gas rebate). 
+
+**Anything received via `eth_sendRawTransaction` will be submitted normally/relayed**
 
 ```
 manifold_sendTransaction
