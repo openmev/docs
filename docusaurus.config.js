@@ -18,26 +18,6 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   organizationName: 'openmev',
   projectName: 'docs',
-  plugins: [
-    [
-      'docusaurus-plugin-typedoc',
-      {
-        entryPoints: ['./external/libsushi/src/index.ts'],
-        tsconfig: ['./external/libsushi/tsconfig.json'],
-        id: "LibSushi",
-        readme: "none",
-        out: "api/libsushi",
-        categorizeByGroup: false,
-        includeVersion: true,
-        indexTitle: "LibSushi",
-        sidebar: {
-          categoryLabel: "library",
-          readmeLabel: "library",
-          collapsed: true,
-        },
-      },
-    ],
-  ],
   presets: [
     [
       '@docusaurus/preset-classic',
