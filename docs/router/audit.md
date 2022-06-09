@@ -1,7 +1,7 @@
 ---
-title:
-version:
-repo:
+title: yAcademy OpenMEV SushiGuard Router Audit
+version: 8648277c0a89d0091f959948682543bdcf0c280b
+authors: ['Jackson', 'engn33r', 'sjkelleyjr']
 ---
 
 # yAcademy OpenMEV review
