@@ -58,8 +58,8 @@ This document is distributed under a [Creative Commons Attribution-ShareAlike li
 
 ## Citations / Attributions
 
-The Recurse Community, https://www.recurse.com/about; 2022 June 10
-The Scala Community, https://scala-lang.org/conduct/; 2022 June 10
-The ZIO Community, https://github.com/zio;  2022 June 10
-The Rust Code of Conduct, https://www.rust-lang.org/policies/code-of-conduct  2022 June 10
-The Node.js Policy on Trolling, https://blog.izs.me/post/30036893703/policy-on-trolling
+The Recurse Community, https://www.recurse.com/about; 2022 June 10 <br />
+The Scala Community, https://scala-lang.org/conduct/; 2022 June 10 <br />
+The ZIO Community, https://github.com/zio;  2022 June 10 <br />
+The Rust Code of Conduct, https://www.rust-lang.org/policies/code-of-conduct  2022 June 10 <br />
+The Node.js Policy on Trolling, https://blog.izs.me/post/30036893703/policy-on-trolling <br />
