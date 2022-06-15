@@ -1,6 +1,5 @@
 ---
 created: 2022-06-14T20:44:13 (UTC -07:00)
-tags: 
 source: https://notes.ethereum.org/@barnabe/rk5ue1WF_
 title: maxPriorityFee Calculations
 ---
