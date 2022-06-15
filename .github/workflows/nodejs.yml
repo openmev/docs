@@ -1,36 +1,44 @@
 name: nodejs
 
-on: ['push']
+on: 
+  push:
+     paths:
+      - "**/**"
+      - "!**/*.yml/**"
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  pipeline:
+    name: Node ${{ matrix.node-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     strategy:
+      fail-fast: false
       matrix:
-        node-version: ['14.x']
+        node-version: ['16.x']
+        os: ['ubuntu-latest']
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.0.2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3.3.0
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: Get yarn cache directory path
-        uses: actions/cache@v2
+      - uses: actions/cache@v3.0.4
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - name: webpage install, build, and test
-        uses: actions/setup-node@v2
-      - run: yarn install
+      - name: Install project dependencies
+        run: yarn --prefer-offline
         id: install
-      - run: yarn run build
+
+      - name: Install project dependencies
+        run: yarn run build
         id: production
