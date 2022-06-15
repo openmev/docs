@@ -60,5 +60,5 @@ _With $p = 2.0 \times 10^{-9}$_
 
 ## Citations
 
-Barnabe Monnot, Ethereum Foundation: "Uncle risk/MEV miner fee calculation", 
-    <https://notes.ethereum.org/@barnabe/rk5ue1WF>; Accssed 2022 June 14th.
+Barnabe Monnot, Ethereum Foundation: "Uncle risk/MEV miner fee calculation", <br />
+    <https://notes.ethereum.org/@barnabe/rk5ue1WF>; Accessed 2022 June 14th.
