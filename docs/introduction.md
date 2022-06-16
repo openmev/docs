@@ -12,16 +12,18 @@ slug: /
 
 OpenMEV aims to provide a credible neutral platform for facilitating both aggregation and direct communication channels between block validators, block producers and block synchronizers for the Ethereum and EVM-based networks.
 
-Example use cases include:
+#### Example use cases include:
 
-- users that would like to communicate their preferred transaction order within a block.
+- Users that would like to communicate their preferred transaction order within a block.
 - Account abstraction via private mempool
 
-> OpenMEV is built on top of SecureRPC. SecureRPC provides users with an accessible, convenient and secure infrastructure for transaction routing and execution.
+#### SecureRpc.com 
 
-- More accessible: allow ordinary users to easily discover the trading risk and value on the blockchain network.
-- More convenient: enable the arbitrage traders more opportunities to increase profits at a low cost.
-- More secure: make transactions on the blockchain network more secure and private.
+OpenMEV is built on top of SecureRPC. SecureRPC provides users with an accessible, convenient and secure infrastructure for transaction routing and execution.
+
+- Accessible: allow ordinary users to easily discover the trading risk and value on the network.
+- Convenient: enable backrunning swaps automatically so that more opportunities to capture profits at a lower cost.
+- Secure: make transactions on the blockchain network more secure and private.
 
 ### What is `credible neutrality`?
 
@@ -36,6 +38,8 @@ This ethos is at the heart of OpenMEV. Part of establishing credible neutrality 
 :::info [MEV or Maximal Extractable Value](https://medium.com/-research/we-live-in-a-mempool-backrunning-the-mev-crisis-a4ea0b493b05) is the value of the ability to order transactions within a block or blocks.
 
 - Tom Schmidt, Dragonfly Capital :::
+
+<br />
 
 ## Getting started
 
