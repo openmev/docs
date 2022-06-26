@@ -2828,7 +2828,7 @@
   dependencies:
     "@types/node" "*"
 
-"@typescript/twoslash@3.1.0":
+"@typescript/twoslash@3.1.0", "@typescript/twoslash@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@typescript/twoslash/-/twoslash-3.1.0.tgz#20b4d4bb58729681ff7f4b187af98757ea8723d4"
   integrity sha512-kTwMUQ8xtAZaC4wb2XuLkPqFVBj2dNBueMQ89NWEuw87k2nLBbuafeG5cob/QEr6YduxIdTVUjix0MtC7mPlmg==
@@ -7921,7 +7921,7 @@ remark-parse@8.0.3:
     vfile-location "^3.0.0"
     xtend "^4.0.1"
 
-remark-shiki-twoslash@3.0.9:
+remark-shiki-twoslash@3.0.9, remark-shiki-twoslash@^3.0.9:
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/remark-shiki-twoslash/-/remark-shiki-twoslash-3.0.9.tgz#5c10793733fdf3dd5b2de50f1c220d3ec1f0ff92"
   integrity sha512-durv6l16O8F5XY0b0WduewxlOnnc1B83fxWFDOfGX9ehvHw+xcPJbjurDy8m99EpvC5Q/kUG4fbSSK/HwpYxCw==

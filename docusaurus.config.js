@@ -34,12 +34,12 @@ module.exports = {
         },
       }),
     ],
-     [
-           'docusaurus-preset-shiki-twoslash',
-           {
-             themes: ["min-light", "nord"],
-           }
-       ]
+    [
+      'docusaurus-preset-shiki-twoslash',
+      {
+        themes: ['dark-plus'],
+      },
+    ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
