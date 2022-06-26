@@ -4,7 +4,7 @@ source: https://notes.ethereum.org/@barnabe/rk5ue1WF_
 title: maxPriorityFee Calculations
 ---
 
-# maxPriorityFee 
+# maxPriorityFee
 
 `maxPriorityFee` is calculated using the methodology below.
 
@@ -18,9 +18,9 @@ For implemntations such as that used in the Sushiswap frontend, it is currently 
 
 > NOTE. Both Ethersjs and Web3js hardcode this value, [see issue for ethersjs](https://github.com/ethers-io/ethers.js/issues/1817), and [for web3js this issue](https://github.com/ChainSafe/web3.js/pull/4277)
 
-## Methodology 
+## Methodology
 
-> Uncle risk/MEV miner fee calculation  - Call `T_` the transaction fees netted by MEV transactions
+> Uncle risk/MEV miner fee calculation - Call `T_` the transaction fees netted by MEV transactions
 
 -   Call $T_{MEV}$ the transaction fees netted by MEV transactions (in Gwei)
 -   MEV transactions use an amount of gas $g_{MEV}$
@@ -61,4 +61,4 @@ _With $p = 2.0 \times 10^{-9}$_
 ## Citations
 
 Barnabe Monnot, Ethereum Foundation: "Uncle risk/MEV miner fee calculation", <br />
-    <https://notes.ethereum.org/@barnabe/rk5ue1WF>; Accessed 2022 June 14th.
+<https://notes.ethereum.org/@barnabe/rk5ue1WF>; Accessed 2022 June 14th.

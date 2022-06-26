@@ -26,10 +26,10 @@ X-Manifold-Signature: 0x1234:0xabcd" \
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "method": "eth_sendBundle",
-  "params": [],
-  "id": 1
+    "jsonrpc": "2.0",
+    "method": "eth_sendBundle",
+    "params": [],
+    "id": 1
 }
 ```
 
@@ -40,11 +40,11 @@ The signature is calculated by taking the [EIP-191](https://eips.ethereum.org/EI
 Here's an example using ethers.js:
 
 ```ts twoslash
-import { Wallet, utils } from 'ethers';
-const privateKey = '0x1234';
+import { Wallet, utils } from "ethers";
+const privateKey = "0x1234";
 const wallet = new Wallet(privateKey);
 const body = '{"jsonrpc":"2.0","method":"eth_sendBundle","params":[{see above}],"id":1}';
 //       ^?
-const signature = wallet.address + ':' + wallet.signMessage(utils.id(body));
+const signature = wallet.address + ":" + wallet.signMessage(utils.id(body));
 //       ^?
 ```

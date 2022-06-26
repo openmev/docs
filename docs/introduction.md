@@ -14,22 +14,22 @@ OpenMEV aims to provide a credible neutral platform for facilitating both aggreg
 
 #### Example use cases include:
 
-- Users that would like to communicate their preferred transaction order within a block.
-- Account abstraction via private mempool
+-   Users that would like to communicate their preferred transaction order within a block.
+-   Account abstraction via private mempool
 
-#### SecureRpc.com 
+#### SecureRpc.com
 
 OpenMEV is built on top of SecureRPC. SecureRPC provides users with an accessible, convenient and secure infrastructure for transaction routing and execution.
 
-- Accessible: allow ordinary users to easily discover the trading risk and value on the network.
-- Convenient: enable backrunning swaps automatically so that more opportunities to capture profits at a lower cost.
-- Secure: make transactions on the blockchain network more secure and private.
+-   Accessible: allow ordinary users to easily discover the trading risk and value on the network.
+-   Convenient: enable backrunning swaps automatically so that more opportunities to capture profits at a lower cost.
+-   Secure: make transactions on the blockchain network more secure and private.
 
 ### What is `credible neutrality`?
 
 > "...that it is not just neutrality that is required here, it is credible neutrality. That is, it is not just enough for a mechanism to not be designed to favor specific people or outcomes over others; it's also crucially important for a mechanism to be able to convince a large and diverse group of people that the mechanism at least makes that basic effort to be fair."
 >
-> - Vitalik Buterin, [credible neutrality as a guiding principle](https://nakamoto.com/credible-neutrality/)
+> -   Vitalik Buterin, [credible neutrality as a guiding principle](https://nakamoto.com/credible-neutrality/)
 
 This ethos is at the heart of OpenMEV. Part of establishing credible neutrality is having a clear and comprehensive rule book that regulates off-chain behavior and activities. Our assumption concerning governance is that methods and processes that work in legacy markets may not be applicable in adversarial environments such as permissionless blockchains. With that understanding it is important not to rely solely on such systems and mechanics long term.
 
@@ -37,7 +37,7 @@ This ethos is at the heart of OpenMEV. Part of establishing credible neutrality 
 
 :::info [MEV or Maximal Extractable Value](https://medium.com/-research/we-live-in-a-mempool-backrunning-the-mev-crisis-a4ea0b493b05) is the value of the ability to order transactions within a block or blocks.
 
-- Tom Schmidt, Dragonfly Capital :::
+-   Tom Schmidt, Dragonfly Capital :::
 
 <br />
 

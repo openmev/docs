@@ -36,12 +36,12 @@ Typescript function `getDefaultRelaySigningKey` searches for your key, if unable
 
 ```typescript
 export function getDefaultRelaySigningKey(): string {
-  console.warn(
-    '[#Error]: BUNDLE_SIGNING_KEY environment variable. Creating random signing key, this searcher will not be building a reputation for next run',
-  );
-  const key = Wallet.createRandom().privateKey;
-  console.log(key);
-  return key;
+    console.warn(
+        "[#Error]: BUNDLE_SIGNING_KEY environment variable. Creating random signing key, this searcher will not be building a reputation for next run",
+    );
+    const key = Wallet.createRandom().privateKey;
+    console.log(key);
+    return key;
 }
 ```
 

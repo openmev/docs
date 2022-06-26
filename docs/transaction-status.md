@@ -18,11 +18,11 @@ This documentation refers to the latest version of OpenMEV ([v2.0.0-draft](#)), 
 
 ## Potential statuses
 
-- `PENDING` - The transaction was received and is currently being submitted to miners
-- `INCLUDED` - The transaction was included on-chain
-- `FAILED` - The transaction was submitted for 25 blocks and failed to be included on-chain
-- `CANCELLED` - The transaction was cancelled by the user and not included on-chain
-- `UNKNOWN` - The transaction was not received
+-   `PENDING` - The transaction was received and is currently being submitted to miners
+-   `INCLUDED` - The transaction was included on-chain
+-   `FAILED` - The transaction was submitted for 25 blocks and failed to be included on-chain
+-   `CANCELLED` - The transaction was cancelled by the user and not included on-chain
+-   `UNKNOWN` - The transaction was not received
 
 ## Privacy
 
@@ -36,18 +36,18 @@ To check the status of your transactions query the OpenMEV API Endpoint. Respons
 
 ```json
 {
-  "status": "PENDING",
-  "hash": "YOUR_TX_HASH",
-  "maxBlockNumber": "latest",
-  "transaction": {
-    "from": "<SENDER>",
-    "to": "<RECEIVER>",
-    "gasLimit": "23000",
-    "maxFeePerGas": "300",
-    "maxPriorityFeePerGas": "10",
-    "nonce": "42",
-    "value": "1333333333337"
-  }
+    "status": "PENDING",
+    "hash": "YOUR_TX_HASH",
+    "maxBlockNumber": "latest",
+    "transaction": {
+        "from": "<SENDER>",
+        "to": "<RECEIVER>",
+        "gasLimit": "23000",
+        "maxFeePerGas": "300",
+        "maxPriorityFeePerGas": "10",
+        "nonce": "42",
+        "value": "1333333333337"
+    }
 }
 ```
 
@@ -74,9 +74,9 @@ To check the status of your transactions query the OpenMEV API Endpoint. Respons
  * @interface JsonRpcError
  */
 export interface JsonRpcError {
-  code: number;
-  message: string;
-  data?: unknown;
+    code: number;
+    message: string;
+    data?: unknown;
 }
 
 /**
@@ -85,34 +85,33 @@ export interface JsonRpcError {
  * @template T
  */
 export interface JsonRpcResponse<T> {
-  jsonrpc: '2.0';
-  id?: number | string | null;
-  result?: T;
-  error?: JsonRpcError;
+    jsonrpc: "2.0";
+    id?: number | string | null;
+    result?: T;
+    error?: JsonRpcError;
 }
 
 export enum PrivateTxState {
-  UNCHECKED = 'UNCHECKED',
-  PROCESSING = 'PROCESSING',
-  OK = 'OK',
-  INDETERMINATE = 'INDETERMINATE',
-  ERROR = 'ERROR',
+    UNCHECKED = "UNCHECKED",
+    PROCESSING = "PROCESSING",
+    OK = "OK",
+    INDETERMINATE = "INDETERMINATE",
+    ERROR = "ERROR",
 }
 
 export type RelayResponses = Record<string, RelayResponse>;
 
 export interface RelayResponse {
-  response: JsonRpcResponse<any>;
-  error?: string;
+    response: JsonRpcResponse<any>;
+    error?: string;
 }
 
 export interface PrivateTxStatus {
-  transactionHash: string;
-  receivedAt: string;
-  relayedAt?: string;
-  minedAt?: string;
-  relayFailure?: boolean;
-  relayResponses?: RelayResponses;
+    transactionHash: string;
+    receivedAt: string;
+    relayedAt?: string;
+    minedAt?: string;
+    relayFailure?: boolean;
+    relayResponses?: RelayResponses;
 }
 ```
-

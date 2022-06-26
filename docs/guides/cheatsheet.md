@@ -82,7 +82,11 @@ Simulate bundle:
 
 ```ts
 const signedTransactions = await flashbotsProvider.signBundle(transactionBundle);
-const simulation = await flashbotsProvider.simulate(signedTransactions, targetBlockNumber, targetBlockNumber + 1);
+const simulation = await flashbotsProvider.simulate(
+    signedTransactions,
+    targetBlockNumber,
+    targetBlockNumber + 1,
+);
 console.log(JSON.stringify(simulation, null, 2));
 ```
 
@@ -93,10 +97,10 @@ Get conflicting bundles for a prior block:
 ```ts
 const signedTransactions = await flashbotsProvider.signBundle(transactionBundle);
 console.log(
-  await flashbotsProvider.getConflictingBundle(
-    signedTransactions,
-    13140328, // blockNumber
-  ),
+    await flashbotsProvider.getConflictingBundle(
+        signedTransactions,
+        13140328, // blockNumber
+    ),
 );
 ```
 
@@ -106,9 +110,9 @@ Get submission time data and compare to block time:
 
 ```ts
 console.log(
-  await flashbotsProvider.getBundleStats(
-    '0x123456789abcdef123456789abcdef123456789abcdef123456789abcdef1234',
-    13509887,
-  ),
+    await flashbotsProvider.getBundleStats(
+        "0x123456789abcdef123456789abcdef123456789abcdef123456789abcdef1234",
+        13509887,
+    ),
 );
 ```

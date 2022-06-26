@@ -1,7 +1,7 @@
 ---
 title: eth_getUncleByBlockHashAndIndex
 version: 2022.04
-tags: ['json rpc', 'gateway', 'api']
+tags: ["json rpc", "gateway", "api"]
 ---
 
 #### eth_getUncleByBlockHashAndIndex
@@ -21,24 +21,24 @@ Returns information about an uncle specified by block hash and uncle index posit
 
 {`null|object`} - `null` if no block or uncle is found, otherwise an uncle object with the following members:
 
-- {[`Data`](#data)} `extraData` - "extra data" field of this block
-- {[`Data`](#data)} `hash` - block hash or `null` if pending
-- {[`Data`](#data)} `logsBloom` - logs bloom filter or `null` if pending
-- {[`Data`](#data)} `miner` - address that received this block's mining rewards
-- {[`Data`](#data)} `nonce` - proof-of-work hash or `null` if pending
-- {[`Data`](#data)} `parentHash` - parent block hash
-- {[`Data`](#data)} `receiptsRoot` -root of the this block's receipts trie
-- {[`Data`](#data)} `sha3Uncles` - SHA3 of the uncles data in this block
-- {[`Data`](#data)} `stateRoot` - root of this block's final state trie
-- {[`Data`](#data)} `transactionsRoot` - root of this block's transaction trie
-- {[`Quantity`](#quantity)} `difficulty` - difficulty for this block
-- {[`Quantity`](#quantity)} `gasLimit` - maximum gas allowed in this block
-- {[`Quantity`](#quantity)} `gasUsed` - total used gas by all transactions in this block
-- {[`Quantity`](#quantity)} `number` - block number or `null` if pending
-- {[`Quantity`](#quantity)} `size` - size of this block in bytes
-- {[`Quantity`](#quantity)} `timestamp` - unix timestamp of when this block was collated
-- {[`Quantity`](#quantity)} `totalDifficulty` - total difficulty of the chain until this block
-- {`Array<Transaction>`} `uncles` - list of uncle hashes
+-   {[`Data`](#data)} `extraData` - "extra data" field of this block
+-   {[`Data`](#data)} `hash` - block hash or `null` if pending
+-   {[`Data`](#data)} `logsBloom` - logs bloom filter or `null` if pending
+-   {[`Data`](#data)} `miner` - address that received this block's mining rewards
+-   {[`Data`](#data)} `nonce` - proof-of-work hash or `null` if pending
+-   {[`Data`](#data)} `parentHash` - parent block hash
+-   {[`Data`](#data)} `receiptsRoot` -root of the this block's receipts trie
+-   {[`Data`](#data)} `sha3Uncles` - SHA3 of the uncles data in this block
+-   {[`Data`](#data)} `stateRoot` - root of this block's final state trie
+-   {[`Data`](#data)} `transactionsRoot` - root of this block's transaction trie
+-   {[`Quantity`](#quantity)} `difficulty` - difficulty for this block
+-   {[`Quantity`](#quantity)} `gasLimit` - maximum gas allowed in this block
+-   {[`Quantity`](#quantity)} `gasUsed` - total used gas by all transactions in this block
+-   {[`Quantity`](#quantity)} `number` - block number or `null` if pending
+-   {[`Quantity`](#quantity)} `size` - size of this block in bytes
+-   {[`Quantity`](#quantity)} `timestamp` - unix timestamp of when this block was collated
+-   {[`Quantity`](#quantity)} `totalDifficulty` - total difficulty of the chain until this block
+-   {`Array<Transaction>`} `uncles` - list of uncle hashes
 
 ##### Example
 

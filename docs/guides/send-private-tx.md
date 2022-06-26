@@ -15,32 +15,32 @@ These methods are currently implemented in the `libmev` library.
 ```javascript
 // ethers.js
 const signer = Wallet.createRandom();
-const provider = new providers.JsonRpcProvider('http://localhost:8545');
+const provider = new providers.JsonRpcProvider("http://localhost:8545");
 const flashbotsProvider = await FlashbotsBundleProvider.create(provider, signer);
 
 const transaction = {
-  from: signer.address,
-  to: signer.address,
-  value: '0x42',
-  gasPrice: BigNumber.from(99).mul(1e9),
-  gasLimit: BigNumber.from(21000),
+    from: signer.address,
+    to: signer.address,
+    value: "0x42",
+    gasPrice: BigNumber.from(99).mul(1e9),
+    gasLimit: BigNumber.from(21000),
 };
 
 const res = await flashbotsProvider.sendPrivateTransaction(
-  {
-    transaction,
-    signer,
-  },
-  {
-    maxBlockNumber: (await provider.getBlockNumber()) + 5, // only allow tx to be mined for the next 5 blocks
-  },
+    {
+        transaction,
+        signer,
+    },
+    {
+        maxBlockNumber: (await provider.getBlockNumber()) + 5, // only allow tx to be mined for the next 5 blocks
+    },
 );
 
 const waitRes = await res.wait();
 if (waitRes === FlashbotsTransactionResolution.TransactionIncluded) {
-  console.log('Private transaction successfully mined.');
+    console.log("Private transaction successfully mined.");
 } else if (waitRes === FlashbotsTransactionResolution.TransactionDropped) {
-  console.log('Private transaction was not mined and has been removed from the system.');
+    console.log("Private transaction was not mined and has been removed from the system.");
 }
 ```
 
@@ -50,15 +50,15 @@ To send a _single_ transaction without having to send it as a bundle, use the `s
 
 ```js
 const tx = {
-  from: wallet.address,
-  to: wallet.address,
-  value: '0x42',
-  gasPrice: BigNumber.from(99).mul(1e9), // 99 gwei
-  gasLimit: BigNumber.from(21000),
+    from: wallet.address,
+    to: wallet.address,
+    value: "0x42",
+    gasPrice: BigNumber.from(99).mul(1e9), // 99 gwei
+    gasLimit: BigNumber.from(21000),
 };
 const privateTx = {
-  transaction: tx,
-  signer: wallet,
+    transaction: tx,
+    signer: wallet,
 };
 const res = await flashbotsProvider.sendPrivateTransaction(privateTx);
 ```
@@ -70,5 +70,8 @@ Optionally, you can set the following parameters to fine-tune your submission:
 const maxBlockNumber = (await provider.getBlockNumber()) + 10;
 // timestamp for simulations
 const minTimestamp = 1645753192;
-const res = await flashbotsProvider.sendPrivateTransaction(privateTx, { maxBlockNumber, minTimestamp });
+const res = await flashbotsProvider.sendPrivateTransaction(privateTx, {
+    maxBlockNumber,
+    minTimestamp,
+});
 ```

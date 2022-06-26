@@ -12,10 +12,10 @@ CommodityStream does not recommend using ping time to rpc.securerpc.com (or any 
 
 CommodityStream services, are not designed as ICMP network testing services
 
-- Rate limiting ICMP in general
-- ICMP ping or traceroute traffic can be discarded or delayed en-route to CommodityStream
-- The termination point of the TCP/UDP session with CommodityStream may not represent the full network path between a user and the service
-- User requests may be served from locations other than the destination of the initial IP termination point
+-   Rate limiting ICMP in general
+-   ICMP ping or traceroute traffic can be discarded or delayed en-route to CommodityStream
+-   The termination point of the TCP/UDP session with CommodityStream may not represent the full network path between a user and the service
+-   User requests may be served from locations other than the destination of the initial IP termination point
 
 Additionally, even a complete lack of response to ICMP traffic may not reflect any sort of issue with CommodityStream service performance.
 

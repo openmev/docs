@@ -6,10 +6,10 @@ Returns the number of transactions sent from an address
 
 ##### Parameters
 
-| # | Type | Description |
-| --- | --- | --- |
-| 1 | {[`Data`](#data)} | address to query for sent transactions |
-| 2 | {[`Quantity`](#quantity)\|`string`\|[`Block Identifier`](#block-identifier)} | block number, or one of `"latest"`, `"earliest"` or `"pending"`, or a block identifier as described in [`Block Identifier`](#block-identifier) |
+| #   | Type                                                                         | Description                                                                                                                                    |
+| --- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | {[`Data`](#data)}                                                            | address to query for sent transactions                                                                                                         |
+| 2   | {[`Quantity`](#quantity)\|`string`\|[`Block Identifier`](#block-identifier)} | block number, or one of `"latest"`, `"earliest"` or `"pending"`, or a block identifier as described in [`Block Identifier`](#block-identifier) |
 
 ##### Returns
 

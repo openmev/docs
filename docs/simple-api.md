@@ -12,8 +12,8 @@ OpenMEV provides HTTP endpoints to interact with the reputation service and HTTP
 
 This is a Quick Start like guide, please see the official reference API specification for a full rundown.
 
-:::tip 
-If you want to use the OpenMEV APIs with a JavaScript library you can also use the npm package [`libmev`](https://github.com/manifoldfinance/libmev). 
+:::tip
+If you want to use the OpenMEV APIs with a JavaScript library you can also use the npm package [`libmev`](https://github.com/manifoldfinance/libmev).
 :::
 
 ## Block parameters:
@@ -31,11 +31,11 @@ The block parameter can have the following values:
 
 Use `eth_subscribe` to create subscriptions for the following event types:
 
-- New headers
-- Logs
-- Pending transactions
-- Dropped transactions
-- Synchronizing
+-   New headers
+-   Logs
+-   Pending transactions
+-   Dropped transactions
+-   Synchronizing
 
 > TIP Use `mev_subscribe` to create subscriptions for logs on private transactions.
 
@@ -143,45 +143,45 @@ curl -X POST 'https://api.sushirelay.com/v1' \
 
 ```jsonc
 {
-  "id": "83",
-  "jsonrpc": "2.0",
-  "result": "0xdef739"
+    "id": "83",
+    "jsonrpc": "2.0",
+    "result": "0xdef739"
 }
 ```
 
 #### Example: Javascript `eth_blockNumber`
 
 ```javascript
-const axios = require('axios');
+const axios = require("axios");
 let data = JSON.stringify({
-  jsonrpc: '2.0',
-  method: 'eth_blockNumber',
-  params: [],
-  id: 83,
+    jsonrpc: "2.0",
+    method: "eth_blockNumber",
+    params: [],
+    id: 83,
 });
 
 const config = {
-  method: 'post',
-  url: 'https://api.sushirelay.com/v1',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  timeout: 1000,
-  data: data,
+    method: "post",
+    url: "https://api.sushirelay.com/v1",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    timeout: 1000,
+    data: data,
 };
 
 axios(config)
-  .then(function (response) {
-    console.log(JSON.stringify(response.data));
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+    .then(function (response) {
+        console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
 ```
 
 ### OpenMEV Transaction
 
-Same signature as `eth_sendRawTransaction` but the tx is eligible for arb and goes into our OpenMEV workflow (e.g. gas rebate). 
+Same signature as `eth_sendRawTransaction` but the tx is eligible for arb and goes into our OpenMEV workflow (e.g. gas rebate).
 
 **Anything received via `eth_sendRawTransaction` will be submitted normally/relayed**
 

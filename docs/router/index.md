@@ -8,11 +8,11 @@ sidebar_position: 1
 pagination_label: Introduction
 description: OpenMEV Specification
 keywords:
-  - technical
-  - specification
-  - openmev
-  - flashbots
-  - mev
+    - technical
+    - specification
+    - openmev
+    - flashbots
+    - mev
 ---
 
 # OpenMEV Protocol Overview
@@ -29,12 +29,12 @@ with the SDK. A user can cancel an unconfirmed transaction at any time for free,
 
 ### Platform Documentation
 
-- Strategy and Implementation details
-- End User information
-- Help Desk and Troubleshooting
-- Searcher Integration
-- Formulas and Proofs
-- Technical: Technical overview on specific category
+-   Strategy and Implementation details
+-   End User information
+-   Help Desk and Troubleshooting
+-   Searcher Integration
+-   Formulas and Proofs
+-   Technical: Technical overview on specific category
 
 ### What is OpenMEV?
 
@@ -42,10 +42,10 @@ OpenMEV provides a trading proxy engine that is used to protect your transaction
 network. It aims to provide traders, arbitrageurs and block producers with an accessible, convenient and secure
 infrastructure for transactions.
 
-- More accessible: allow ordinary users to easily discover the trading risk and value on the blockchain network
+-   More accessible: allow ordinary users to easily discover the trading risk and value on the blockchain network
 
-- More convenient: enable the arbitrage traders more opportunities to increase profits at a low-cost More secure: make
-  transactions on the blockchain network more secure and private.
+-   More convenient: enable the arbitrage traders more opportunities to increase profits at a low-cost More secure: make
+    transactions on the blockchain network more secure and private.
 
 ### What public services does OpenMEV provide?
 
@@ -77,7 +77,7 @@ extracting MEV profits and returning them back to the traders.
 > a mechanism to be able to convince a large and diverse group of people that the mechanism at least makes that basic
 > effort to be fair."
 >
-> - Vitalik Buterin, [credible neutrality as a guiding principle](https://nakamoto.com/credible-neutrality/)
+> -   Vitalik Buterin, [credible neutrality as a guiding principle](https://nakamoto.com/credible-neutrality/)
 
 This ethos is at the heart of OpenMEV. Part of establishing credible neutrality is having a clear and comprehensive rule
 book that regulates off-chain behavior and activities. Our assumption concerning governance is that methods and
