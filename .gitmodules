@@ -1,3 +1,0 @@
-[submodule "external/libsushi"]
-	path = external/libsushi
-	url = https://github.com/manifoldfinance/libsushi
