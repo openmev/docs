@@ -1,14 +1,16 @@
 ---
-title: OpenMEV API
-description: OpenMEV RPC Status and Responses
-version: v2022.05
+title: SecureRpc API
+description: SecureRpc API and OpenMEV RPC Status and Responses
+version: v2022.06.29
 ---
 
-# OpenMEV RPC Status and Responses
+# SecureRpc and  OpenMEV RPC Status and Responses
 
-> This covers both SecureRPC and OpenMEV
+> [api.securerpc.com/v1](https://api.securerpc.com/v1)
 
-Transactions that you submit to OpenMEV won't be observable in the public mempool. We provide a flashbots-compatible status api endpoint for both end-users and integrators to use to populate / query user submissions for both transactions and bundles.
+> This covers both SecureRpc and OpenMEV
+
+Transactions that you submit to OpenMEV won't be observable in the public mempool. We provide a flashbots compatible status API endpoint for both end-users and integrators to use to populate / query user submissions for both transactions and bundles.
 
 - [OpenMEV RPC Status and Responses](#openmev-rpc-status-and-responses)
   * [Potential statuses](#potential-statuses)
@@ -57,7 +59,7 @@ OpenMEV Status API is FlashBots compatible, meaning it covers at least version 0
 
 To check the status of your transactions query either SecureRPC or the OpenMEV API Endpoint. Response messages are formatted as follows:
 
-> NOTE. you can also use: https://api.sushirelay.com/v1
+> NOTE. You can also use: https://api.sushirelay.com/v1
 
 ```json
 {
@@ -214,7 +216,11 @@ curl -X POST -H 'Content-Type: application/json' --data '{
 
 Simulate a bundle of transactions at the top of a block.
 
-After retrieving the block specified in the `blockNrOrHash` it takes the same `blockhash`, `gasLimit`, `difficulty`, same `timestamp` unless the `blockTimestamp` property is specified, and increases the block number by `1`. `manifold_callBundle` will timeout after `5` seconds.
+After retrieving the block specified in the `blockNrOrHash` it takes the same `blockhash`, `gasLimit`, `difficulty`, same `timestamp` unless the `blockTimestamp` property is specified, and increases the block number by `1`. `manifold_callBundle` will time out after `5` seconds.
+
+### Note about `callBundle`
+
+This RPC Method was removed without notice by flashbots in v0.4.0 of their client, then added in the most recent release, v0.6.0. We maintain a separate client to ensure availability of this RPC Method
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -227,8 +233,88 @@ After retrieving the block specified in the `blockNrOrHash` it takes the same `b
 
 Map<`Data`, "error|value" : `Data`> - a mapping from transaction hashes to execution results with error or output (value) for each of the transactions
 
+```jsonc
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "manifold_callBundle", // the same as flashbots `eth_callBundle`
+  "params": [
+    {
+      txs,               // Array[String], A list of signed transactions to execute in an atomic bundle
+      blockNumber,       // String, a hex encoded block number for which this bundle is valid on
+      stateBlockNumber,  // String, either a hex encoded number or a block tag for which state to base this simulation on. Can use "latest"
+      timestamp,         // (Optional) Number, the timestamp to use for this bundle simulation, in seconds since the unix epoch
+    }
+  ]
+}
+```
 
-## Validation and Types
+> Example
+
+```jsonc
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "eth_callBundle",
+  "params": [
+    {
+      "txs": ["0x123abc...", "0x456def..."],
+      "blockNumber": "0xb63dcd",
+      "stateBlockNumber": "latest",
+      "timestamp": 1615920932
+    }
+  ]
+}
+```
+
+> Example response:
+
+```jsonc
+{
+  "jsonrpc": "2.0",
+  "id": "123",
+  "result": {
+    "bundleGasPrice": "476190476193",
+    "bundleHash": "0x73b1e258c7a42fd0230b2fd05529c5d4b6fcb66c227783f8bece8aeacdd1db2e",
+    "coinbaseDiff": "20000000000126000",
+    "ethSentToCoinbase": "20000000000000000",
+    "gasFees": "126000",
+    "results": [
+      {
+        "coinbaseDiff": "10000000000063000",
+        "ethSentToCoinbase": "10000000000000000",
+        "fromAddress": "0x02A727155aeF8609c9f7F2179b2a1f560B39F5A0",
+        "gasFees": "63000",
+        "gasPrice": "476190476193",
+        "gasUsed": 21000,
+        "toAddress": "0x73625f59CAdc5009Cb458B751b3E7b6b48C06f2C",
+        "txHash": "0x669b4704a7d993a946cdd6e2f95233f308ce0c4649d2e04944e8299efcaa098a",
+        "value": "0x"
+      },
+      {
+        "coinbaseDiff": "10000000000063000",
+        "ethSentToCoinbase": "10000000000000000",
+        "fromAddress": "0x02A727155aeF8609c9f7F2179b2a1f560B39F5A0",
+        "gasFees": "63000",
+        "gasPrice": "476190476193",
+        "gasUsed": 21000,
+        "toAddress": "0x73625f59CAdc5009Cb458B751b3E7b6b48C06f2C",
+        "txHash": "0xa839ee83465657cac01adc1d50d96c1b586ed498120a84a64749c0034b4f19fa",
+        "value": "0x"
+      }
+    ],
+    "stateBlockNumber": 5221585,
+    "totalGasUsed": 42000
+  }
+}
+```
+
+
+## JSON-RPC Conformance Reference
+
+Type and data information for validation and conformance.
+
+### Validation and Types
 
 Below type description can also be found in [EIP-1474](https://eips.ethereum.org/EIPS/eip-1474)
 
@@ -281,8 +367,7 @@ The list of error codes introduced by this specification can be found below.
 Each error returns a `null` `data` value, except `-32000` which returns the `data` object with a `err` member that explains the error encountered.
 
 
-
-## Authorization Error Codes
+### Authorization Error Codes
 
 | Code | Possible Return message | Description |
 | --- | --- | --- |
@@ -290,7 +375,7 @@ Each error returns a `null` `data` value, except `-32000` which returns the `dat
 | 2 | Action not allowed | Should be used when some action is not allowed, e.g. preventing an action, while another depending action is processing on, like sending again when a confirmation popup is shown to the user (?). |
 | 3 | Execution error | Will contain a subset of custom errors in the data field. See below. |
 
-## Ethereum Error Codes
+### Ethereum Error Codes
 
 Custom error `3` can contain custom error(s) to further explain what went wrong.  
 They will be contained in the `data` field of the RPC error message as follows:
@@ -298,9 +383,9 @@ They will be contained in the `data` field of the RPC error message as follows:
 | Code | Possible Return message | Description |
 | --- | --- | --- |
 | 100 | X doesn’t exist | Should be used when something which should be there is not found. (Doesn’t apply to eth_getTransactionBy\_ and eth_getBlock\_. They return a success with value `null`) |
-| 101 | Requires ether | Should be used for actions which require somethin else, e.g. gas or a value. |
+| 101 | Requires ether | Should be used for actions which require something else, e.g. gas or a value. |
 | 102 | Gas too low | Should be used when a to low value of gas was given. |
-| 103 | Gas limit exceeded | Should be used when a limit is exceeded, e.g. for the gas limit in a block. |
+| 103 | Gas limits exceeded | Should be used when a limit is exceeded, e.g. for the gas limit in a block. |
 | 104 | Rejected | Should be used when an action was rejected, e.g. because of its content (too long contract code, containing wrong characters ?, should differ from `-32602` - Invalid params). |
 | 105 | Ether too low | Should be used when a to low value of Ether was given. |
 
